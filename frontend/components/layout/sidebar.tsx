@@ -19,7 +19,7 @@ const sidebarItems = [
   { href: "/flashcards", label: "Flashcards", icon: Target },
   { href: "/stories", label: "Stories", icon: BookOpen },
   { href: "/podcasts", label: "Podcasts", icon: Radio },
-  { href: "/ai-tutor", label: "AI Tutor", icon: MessageSquare },
+  { href: "/ai-tutor", label: "Germakemi", icon: MessageSquare },
   { href: "/mock-exams", label: "Mock Exams", icon: FileText },
   { href: "/speaking-lab", label: "Speaking Lab", icon: Mic },
   { href: "/listening-lab", label: "Listening Lab", icon: Headphones },

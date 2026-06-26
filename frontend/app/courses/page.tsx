@@ -3,7 +3,8 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { BookOpen, Clock, Zap, ChevronRight, Lock, Star } from "lucide-react";
+import { GermakemiWidget } from "@/components/germakemi/widget";
+import { BookOpen, Clock, Zap, ChevronRight, Lock, Star, ChevronLeft } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
 import { useAuthStore } from "@/store/authStore";
@@ -35,9 +36,14 @@ export default function CoursesPage() {
         <div className="hidden lg:block"><Sidebar /></div>
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-6xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">German Courses</h1>
-              <p className="text-gray-500 mt-1">Structured learning paths designed for Goethe Institute exam success</p>
+            <div className="flex items-center gap-3 mb-8">
+              <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">German Courses</h1>
+                <p className="text-gray-500 mt-1">Structured learning paths designed for Goethe Institute exam success</p>
+              </div>
             </div>
 
             {/* Level Filter */}
@@ -107,6 +113,14 @@ export default function CoursesPage() {
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="German courses and structured learning"
+        suggestedQuestions={[
+          "Which course should I start for Goethe A1?",
+          "What grammar topics are most important for B1?",
+          "How long does it take to complete the A2 course?",
+        ]}
+      />
     </div>
   );
 }

@@ -3,11 +3,13 @@
 import { useState, useRef, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import {
-  Mic, MicOff, Play, Square, Volume2, Send, RefreshCw,
-  CheckCircle2, X, Star, TrendingUp, MessageSquare, Target
+  Mic, MicOff, Square, Send, RefreshCw,
+  CheckCircle2, X, Sparkles, ChevronLeft
 } from "lucide-react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { examApi, aiApi } from "@/lib/api";
 import type { SpeakingFeedback } from "@/types";
@@ -160,9 +162,14 @@ export default function SpeakingLabPage() {
         <div className="hidden lg:block"><Sidebar /></div>
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">Speaking Lab 🎤</h1>
-              <p className="text-gray-500 mt-1">Practice German speaking with AI feedback on pronunciation, fluency, and grammar</p>
+            <div className="flex items-center gap-3 mb-8">
+              <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Speaking Lab 🎤</h1>
+                <p className="text-gray-500 text-sm mt-0.5">Practice German speaking — Germakemi evaluates pronunciation, fluency, and grammar</p>
+              </div>
             </div>
 
             <div className="grid lg:grid-cols-5 gap-8">
@@ -294,7 +301,7 @@ export default function SpeakingLabPage() {
                         {isSubmitting ? (
                           <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
                         ) : <Send className="w-4 h-4" />}
-                        {isSubmitting ? "Analyzing..." : "Get AI Feedback"}
+                        {isSubmitting ? "Germakemi is analyzing..." : "Get Germakemi Feedback"}
                       </button>
                     </div>
                   )}
@@ -309,7 +316,10 @@ export default function SpeakingLabPage() {
                       className="bg-white rounded-2xl border border-gray-100 shadow-sm p-6"
                     >
                       <div className="flex items-center justify-between mb-6">
-                        <h2 className="font-bold text-gray-900">AI Feedback</h2>
+                        <div className="flex items-center gap-2">
+                        <Sparkles className="w-4 h-4 text-purple-600" />
+                        <h2 className="font-bold text-gray-900">Germakemi Feedback</h2>
+                      </div>
                         <div className={cn(
                           "flex items-center gap-1.5 px-3 py-1.5 rounded-full text-sm font-bold",
                           feedback.passed ? "bg-green-50 text-green-700" : "bg-red-50 text-red-700"
@@ -365,6 +375,14 @@ export default function SpeakingLabPage() {
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="German speaking practice"
+        suggestedQuestions={[
+          "What are common phrases for the Goethe Sprechen exam?",
+          "How can I improve my German pronunciation?",
+          "Give me a sample Sprechen exercise for B1",
+        ]}
+      />
     </div>
   );
 }

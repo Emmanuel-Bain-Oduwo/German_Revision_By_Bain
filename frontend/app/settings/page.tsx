@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Bell, Shield, Palette, Volume2, Globe, ChevronRight, Moon, Sun, Check, Trash2, LogOut } from "lucide-react";
+import { Bell, Shield, Palette, Volume2, Globe, ChevronRight, Moon, Sun, Check, Trash2, LogOut, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
 import { useAuthStore } from "@/store/authStore";
@@ -80,9 +81,14 @@ export default function SettingsPage() {
         <div className="hidden lg:block"><Sidebar /></div>
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
-              <p className="text-gray-500 mt-1">Manage your account preferences and application settings</p>
+            <div className="flex items-center gap-3 mb-8">
+              <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Settings</h1>
+                <p className="text-gray-500 mt-1">Manage your account preferences and application settings</p>
+              </div>
             </div>
 
             <div className="grid md:grid-cols-[220px_1fr] gap-6">

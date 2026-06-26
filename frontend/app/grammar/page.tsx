@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, ChevronDown, ChevronRight, Search } from "lucide-react";
+import { BookOpen, ChevronDown, ChevronRight, Search, ChevronLeft, Sparkles } from "lucide-react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { vocabularyApi } from "@/lib/api";
 import type { GrammarRule } from "@/types";
 import { cn, getLevelColor } from "@/lib/utils";
@@ -44,9 +46,14 @@ export default function GrammarPage() {
         <div className="hidden lg:block"><Sidebar /></div>
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">Grammar Rules</h1>
-              <p className="text-gray-500 mt-1">Master German grammar with clear explanations, examples, and exercises</p>
+            <div className="flex items-center gap-3 mb-6">
+              <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Grammar Rules</h1>
+                <p className="text-gray-500 text-sm mt-0.5">Master German grammar with clear explanations, examples, and exercises</p>
+              </div>
             </div>
 
             {/* Filters */}
@@ -123,6 +130,12 @@ export default function GrammarPage() {
                           </ul>
                         </div>
                       )}
+                      <Link
+                        href={`/ai-tutor?q=Explain+${encodeURIComponent(rule.title)}+with+practice+exercises`}
+                        className="mt-4 flex items-center gap-2 text-sm text-purple-600 hover:text-purple-700 font-medium"
+                      >
+                        <Sparkles className="w-4 h-4" /> Practice this with Germakemi →
+                      </Link>
                     </motion.div>
                   )}
                 </motion.div>
@@ -137,6 +150,14 @@ export default function GrammarPage() {
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="German grammar rules"
+        suggestedQuestions={[
+          "Explain the four German cases (Nominativ, Akkusativ, Dativ, Genitiv)",
+          "When do I use 'war' vs 'wurde'?",
+          "How does word order work in German sentences?",
+        ]}
+      />
     </div>
   );
 }

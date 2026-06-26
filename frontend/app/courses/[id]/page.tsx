@@ -7,6 +7,7 @@ import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { courseApi } from "@/lib/api";
 import { cn, getLevelGradient, getLevelColor } from "@/lib/utils";
@@ -173,6 +174,14 @@ export default function CourseDetailPage() {
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext={`German course: ${course?.title || "course"}`}
+        suggestedQuestions={[
+          "Explain what I'll learn in this course",
+          "What grammar is covered at this level?",
+          "How does this course prepare me for the Goethe exam?",
+        ]}
+      />
     </div>
   );
 }

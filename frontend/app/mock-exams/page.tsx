@@ -7,10 +7,11 @@ import { useRouter } from "next/navigation";
 import {
   Clock, Target, Trophy, ArrowRight, Star, Lock,
   BookOpen, Headphones, PenTool, Mic, Sparkles,
-  CheckCircle2, BarChart3, TrendingUp, Loader2
+  CheckCircle2, BarChart3, Loader2, ChevronLeft
 } from "lucide-react";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { examApi } from "@/lib/api";
 import type { MockExam } from "@/types";
@@ -20,7 +21,7 @@ import { toast } from "sonner";
 const EXAM_SECTIONS = [
   { icon: BookOpen, label: "Lesen", desc: "Reading comprehension with passages & questions", color: "text-blue-500", bg: "bg-blue-50" },
   { icon: Headphones, label: "Hören", desc: "Audio listening with comprehension questions", color: "text-green-500", bg: "bg-green-50" },
-  { icon: PenTool, label: "Schreiben", desc: "Writing tasks with AI feedback & scoring", color: "text-purple-500", bg: "bg-purple-50" },
+  { icon: PenTool, label: "Schreiben", desc: "Writing tasks with Germakemi feedback & scoring", color: "text-purple-500", bg: "bg-purple-50" },
   { icon: Mic, label: "Sprechen", desc: "Speaking topics with pronunciation analysis", color: "text-rose-500", bg: "bg-rose-50" },
 ];
 
@@ -58,7 +59,7 @@ export default function MockExamsPage() {
         level: selectedLevel,
         sections: ["lesen", "horen", "schreiben", "sprechen"],
       });
-      toast.success("AI-generated mock exam ready!");
+      toast.success("Germakemi generated a new mock exam!");
       router.push(`/mock-exams/${response.data.exam_id}`);
     } catch {
       toast.error("Failed to generate exam. Please try again.");
@@ -87,11 +88,16 @@ export default function MockExamsPage() {
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-6xl mx-auto">
             {/* Header */}
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">Mock Examinations</h1>
-              <p className="text-gray-500 mt-1">
-                Practice with authentic Goethe-style exams across all 4 sections. AI grades your writing & speaking.
-              </p>
+            <div className="flex items-center gap-3 mb-8">
+              <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Mock Examinations</h1>
+                <p className="text-gray-500 text-sm mt-0.5">
+                  Authentic Goethe-style exams. Germakemi grades your writing & speaking.
+                </p>
+              </div>
             </div>
 
             {/* Readiness Banner */}
@@ -192,11 +198,11 @@ export default function MockExamsPage() {
               >
                 <div className="flex items-center gap-2 mb-3">
                   <Sparkles className="w-5 h-5 text-yellow-300" />
-                  <span className="text-sm font-semibold text-white/80">AI Generated</span>
+                  <span className="text-sm font-semibold text-white/80">Germakemi Generated</span>
                 </div>
                 <h3 className="text-xl font-bold mb-2">Generate New Exam</h3>
                 <p className="text-white/70 text-sm mb-6">
-                  Let AI create a fresh, unique Goethe {selectedLevel} mock exam with all 4 sections.
+                  Let Germakemi create a fresh, unique Goethe {selectedLevel} mock exam with all 4 sections.
                 </p>
                 <div className="space-y-2 mb-6">
                   {EXAM_SECTIONS.map((s) => (
@@ -278,13 +284,21 @@ export default function MockExamsPage() {
                 <div className="col-span-2 text-center py-12">
                   <BookOpen className="w-12 h-12 text-gray-200 mx-auto mb-3" />
                   <p className="text-gray-500">No exams available for this level yet.</p>
-                  <p className="text-sm text-gray-400 mt-1">Use the AI generator above to create one!</p>
+                  <p className="text-sm text-gray-400 mt-1">Use Germakemi above to generate one!</p>
                 </div>
               )}
             </div>
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="Goethe exam preparation"
+        suggestedQuestions={[
+          "What are the most common topics in Goethe A1 Schreiben?",
+          "How long is the Goethe B1 exam and what's the passing score?",
+          "Give me tips for the Hören (listening) section",
+        ]}
+      />
     </div>
   );
 }

@@ -2,9 +2,11 @@
 
 import { useEffect, useState, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight, RotateCcw, Volume2, Zap, Target, Trophy, CheckCircle2, X } from "lucide-react";
+import { ChevronLeft, ChevronRight, RotateCcw, Volume2, Zap, Target, Trophy, CheckCircle2, X, Sparkles } from "lucide-react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { flashcardApi } from "@/lib/api";
 import type { Flashcard } from "@/types";
@@ -100,9 +102,14 @@ export default function FlashcardsPage() {
           <div className="max-w-2xl mx-auto">
             {/* Header */}
             <div className="flex items-center justify-between mb-8">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">Flashcards</h1>
-                <p className="text-gray-500 mt-1">Spaced repetition for maximum retention</p>
+              <div className="flex items-center gap-3">
+                <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                  <ChevronLeft className="w-5 h-5" />
+                </Link>
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-900">Flashcards</h1>
+                  <p className="text-gray-500 text-sm mt-0.5">Spaced repetition · SM-2 algorithm for maximum retention</p>
+                </div>
               </div>
               <div className="flex gap-2">
                 {["A1", "A2", "B1"].map((level) => (
@@ -183,6 +190,12 @@ export default function FlashcardsPage() {
                     >
                       <RotateCcw className="w-4 h-4" /> New Session
                     </button>
+                    <Link
+                      href="/ai-tutor"
+                      className="flex items-center justify-center gap-2 border border-purple-300 text-purple-700 px-4 py-3 rounded-xl font-semibold hover:bg-purple-50 transition-colors"
+                    >
+                      <Sparkles className="w-4 h-4" /> Ask Germakemi
+                    </Link>
                   </div>
                 </motion.div>
               )}
@@ -265,15 +278,28 @@ export default function FlashcardsPage() {
               <div className="bg-white rounded-3xl p-10 shadow-sm border border-gray-100 text-center">
                 <Trophy className="w-12 h-12 text-yellow-400 mx-auto mb-3" />
                 <h2 className="text-xl font-bold text-gray-900 mb-2">All caught up!</h2>
-                <p className="text-gray-500 mb-4">No cards due for review. Come back tomorrow!</p>
-                <button onClick={fetchCards} className="px-6 py-3 bg-brand-500 text-white rounded-xl font-semibold hover:bg-brand-600 transition-colors">
-                  Load New Cards
-                </button>
+                <p className="text-gray-500 mb-6">No cards due for review. Come back tomorrow!</p>
+                <div className="flex gap-3 max-w-xs mx-auto">
+                  <button onClick={fetchCards} className="flex-1 px-6 py-3 bg-brand-500 text-white rounded-xl font-semibold hover:bg-brand-600 transition-colors">
+                    Load New Cards
+                  </button>
+                  <Link href="/ai-tutor" className="flex items-center gap-2 px-4 py-3 border border-purple-300 text-purple-700 rounded-xl font-semibold hover:bg-purple-50 transition-colors">
+                    <Sparkles className="w-4 h-4" />
+                  </Link>
+                </div>
               </div>
             )}
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="flashcard study session"
+        suggestedQuestions={[
+          "I'm struggling with this card, can you explain it?",
+          "What's the best way to remember German vocabulary?",
+          "Give me a memory trick for German articles",
+        ]}
+      />
     </div>
   );
 }

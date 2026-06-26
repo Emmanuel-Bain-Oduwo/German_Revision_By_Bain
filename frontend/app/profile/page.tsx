@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { User, Mail, Globe, Target, Calendar, Award, Zap, Flame, BookOpen, Edit2, Camera, Shield, Star } from "lucide-react";
+import { User, Mail, Globe, Target, Calendar, Award, Zap, Flame, BookOpen, Edit2, Camera, Shield, Star, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { userApi } from "@/lib/api";
 import { cn, getLevelColor, getReadinessColor, getReadinessLabel, getProgressToNextLevel, getXPForNextLevel } from "@/lib/utils";
@@ -54,6 +56,12 @@ export default function ProfilePage() {
         <div className="hidden lg:block"><Sidebar /></div>
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-4xl mx-auto space-y-6">
+            <div className="flex items-center gap-3">
+              <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <h1 className="text-2xl font-bold text-gray-900">My Profile</h1>
+            </div>
 
             {/* Profile header card */}
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="bg-white rounded-3xl border border-gray-100 shadow-sm overflow-hidden">
@@ -225,6 +233,14 @@ export default function ProfilePage() {
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="user profile and learning progress"
+        suggestedQuestions={[
+          "How can I improve my exam readiness score?",
+          "What should I focus on to level up faster?",
+          "Give me a study plan for the next 2 weeks",
+        ]}
+      />
     </div>
   );
 }

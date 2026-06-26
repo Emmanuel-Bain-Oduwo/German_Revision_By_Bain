@@ -4,12 +4,13 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import {
   Flame, Zap, Trophy, Target, BookOpen, Clock,
-  TrendingUp, CheckCircle2, BarChart3, Star, ArrowRight, Mic, Brain
+  TrendingUp, CheckCircle2, BarChart3, Star, ArrowRight, Mic, Sparkles
 } from "lucide-react";
 import Link from "next/link";
 import { useAuthStore } from "@/store/authStore";
 import { userApi } from "@/lib/api";
 import type { DashboardData } from "@/types";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { cn, formatScore, getLevelColor, getReadinessColor, getReadinessLabel } from "@/lib/utils";
 import {
   AreaChart, Area, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer
@@ -17,7 +18,7 @@ import {
 
 const quickActions = [
   { href: "/flashcards", icon: Target, label: "Study Flashcards", color: "bg-blue-500", xp: "+5 XP/card" },
-  { href: "/ai-tutor", icon: Brain, label: "Chat with AI Tutor", color: "bg-purple-500", xp: "+10 XP" },
+  { href: "/ai-tutor", icon: Sparkles, label: "Chat with Germakemi", color: "bg-purple-500", xp: "+10 XP" },
   { href: "/mock-exams", icon: BarChart3, label: "Take Mock Exam", color: "bg-emerald-500", xp: "+100 XP" },
   { href: "/speaking-lab", icon: Mic, label: "Speaking Practice", color: "bg-rose-500", xp: "+30 XP" },
 ];
@@ -340,6 +341,14 @@ export default function DashboardPage() {
           </motion.div>
         </div>
       </div>
+      <GermakemiWidget
+        pageContext="Dashboard overview"
+        suggestedQuestions={[
+          "What should I study today to improve my exam readiness?",
+          "Give me a quick grammar exercise for my level",
+          "What are the most common mistakes in the Goethe exam?",
+        ]}
+      />
     </div>
   );
 }

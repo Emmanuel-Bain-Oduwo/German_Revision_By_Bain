@@ -2,11 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Clock, Zap, ArrowLeft, CheckCircle2, Volume2 } from "lucide-react";
+import { BookOpen, Clock, Zap, ArrowLeft, CheckCircle2, Volume2, Sparkles } from "lucide-react";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { contentApi, aiApi } from "@/lib/api";
 import type { Story } from "@/types";
 import { cn, getLevelColor } from "@/lib/utils";
@@ -201,9 +202,22 @@ export default function StoryDetailPage() {
                 Completed! XP Earned
               </div>
             )}
+
+            <Link href="/ai-tutor" className="flex items-center justify-center gap-2 w-full py-3 border border-purple-300 text-purple-700 rounded-2xl font-semibold hover:bg-purple-50 transition-colors">
+              <Sparkles className="w-4 h-4" />
+              Ask Germakemi about this story
+            </Link>
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="German reading comprehension story"
+        suggestedQuestions={[
+          "Can you explain difficult words in this story?",
+          "What grammar structures appear in this text?",
+          "How does this story relate to the Goethe Lesen section?",
+        ]}
+      />
     </div>
   );
 }

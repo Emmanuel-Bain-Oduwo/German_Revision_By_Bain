@@ -54,43 +54,43 @@ const examLevels = [
 const features = [
   {
     icon: Brain,
-    title: "AI-Powered Tutoring",
-    description: "24/7 personalized German tutor powered by GPT-4, DeepSeek & Gemini. Grammar corrections, vocabulary help, and exam tips on demand.",
+    title: "Germakemi — Your Personal Tutor",
+    description: "24/7 personalized German tutor that knows your level, tracks your weaknesses, and gives grammar corrections, vocabulary help, and exam tips on demand.",
     color: "text-purple-500",
     bg: "bg-purple-50",
   },
   {
     icon: Target,
     title: "Exam Readiness Predictor",
-    description: "Our AI analyzes your scores across all 4 exam sections to predict your pass probability before you book the real Goethe exam.",
+    description: "Germakemi analyzes your scores across all 4 exam sections to predict your pass probability before you book the real Goethe exam.",
     color: "text-brand-500",
     bg: "bg-brand-50",
   },
   {
     icon: Mic,
     title: "Speaking & Pronunciation Lab",
-    description: "Record yourself, get AI pronunciation scores, fluency ratings, and instant feedback on your Sprechen performance.",
+    description: "Record yourself, get Germakemi pronunciation scores, fluency ratings, and instant feedback on your Sprechen performance.",
     color: "text-rose-500",
     bg: "bg-rose-50",
   },
   {
     icon: FileText,
     title: "Full Mock Examinations",
-    description: "Authentic Goethe-style practice tests for A1, A2, B1 with AI grading for writing & speaking — just like the real exam.",
+    description: "Authentic Goethe-style practice tests for A1, A2, B1 with Germakemi grading for writing & speaking — just like the real exam.",
     color: "text-amber-500",
     bg: "bg-amber-50",
   },
   {
     icon: Volume2,
-    title: "AI Podcast Generator",
-    description: "Listen to AI-generated German conversations, news, and stories at your level. Ideal for Hören practice anytime.",
+    title: "Germakemi Podcast Generator",
+    description: "Listen to Germakemi-created German conversations, news, and stories at your level. Ideal for Hören practice anytime.",
     color: "text-green-500",
     bg: "bg-green-50",
   },
   {
     icon: PenTool,
     title: "Writing Coach",
-    description: "Submit German essays and get instant AI feedback with grammar corrections, vocabulary suggestions, and exam scores.",
+    description: "Submit German essays and get instant Germakemi feedback with grammar corrections, vocabulary suggestions, and exam scores.",
     color: "text-indigo-500",
     bg: "bg-indigo-50",
   },
@@ -100,7 +100,7 @@ const stats = [
   { value: "50,000+", label: "Students Learning", icon: Users },
   { value: "95%", label: "Pass Rate", icon: Award },
   { value: "A1–B1", label: "Levels Covered", icon: TrendingUp },
-  { value: "24/7", label: "AI Support", icon: Clock },
+  { value: "24/7", label: "Germakemi Support", icon: Clock },
 ];
 
 const testimonials = [
@@ -108,7 +108,7 @@ const testimonials = [
     name: "Aisha Mahmoud",
     country: "Nigeria 🇳🇬",
     level: "Passed B1",
-    quote: "The AI tutor corrected my grammar instantly. I passed my Goethe B1 on the first try after just 3 months of practice!",
+    quote: "Germakemi corrected my grammar instantly. I passed my Goethe B1 on the first try after just 3 months of practice!",
     avatar: "A",
     color: "from-purple-400 to-purple-600",
   },
@@ -173,7 +173,7 @@ export default function HomePage() {
               className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-1.5 text-sm text-white/90 mb-6"
             >
               <Flame className="w-4 h-4 text-orange-400" />
-              <span>AI-Powered Goethe Exam Preparation</span>
+              <span>Germakemi-Powered Goethe Exam Preparation</span>
               <Star className="w-4 h-4 text-yellow-400" />
             </motion.div>
 
@@ -196,7 +196,7 @@ export default function HomePage() {
               transition={{ duration: 0.7, delay: 0.2 }}
               className="text-xl text-white/70 max-w-2xl mx-auto mb-10"
             >
-              Master German A1, A2, and B1 with personalized AI tutoring, authentic mock exams,
+              Master German A1, A2, and B1 with Germakemi — your personal tutor, authentic mock exams,
               speaking practice, and our exclusive Exam Readiness Predictor.
             </motion.p>
 
@@ -313,7 +313,7 @@ export default function HomePage() {
             <span className="text-purple-600 font-semibold text-sm uppercase tracking-wider">Platform Features</span>
             <h2 className="text-4xl font-bold text-gray-900 mt-2 mb-4">Everything You Need to Pass</h2>
             <p className="text-gray-500 max-w-xl mx-auto">
-              A complete German exam preparation ecosystem powered by cutting-edge AI.
+              A complete German exam preparation ecosystem powered by Germakemi, your dedicated tutor.
             </p>
           </FadeIn>
 
@@ -348,7 +348,7 @@ export default function HomePage() {
                 <span className="text-yellow-300">Predictor</span>
               </h2>
               <p className="text-white/70 text-lg mb-8">
-                Our AI analyzes your performance across ALL exam sections — reading, listening, writing, speaking —
+                Germakemi analyzes your performance across ALL exam sections — reading, listening, writing, speaking —
                 plus your vocabulary retention and study consistency to give you a precise pass probability score.
               </p>
               <div className="space-y-4">
@@ -503,7 +503,7 @@ export default function HomePage() {
                 <span className="font-bold text-lg">GoethePrep</span>
               </div>
               <p className="text-gray-400 text-sm leading-relaxed">
-                The most advanced AI-powered platform for Goethe Institute exam preparation.
+                The most advanced platform for Goethe Institute exam preparation, powered by Germakemi.
               </p>
               <div className="flex gap-1 mt-4">
                 <div className="h-1 w-8 bg-black rounded" />
@@ -522,7 +522,7 @@ export default function HomePage() {
             <div>
               <h4 className="font-semibold mb-4">Exam Prep</h4>
               <ul className="space-y-2 text-gray-400 text-sm">
-                {["Mock Exams", "Speaking Lab", "Listening Lab", "AI Tutor", "Exam Readiness"].map((item) => (
+                {["Mock Exams", "Speaking Lab", "Listening Lab", "Germakemi", "Exam Readiness"].map((item) => (
                   <li key={item}><Link href={`/${item.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-white transition-colors">{item}</Link></li>
                 ))}
               </ul>
