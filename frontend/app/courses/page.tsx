@@ -11,6 +11,7 @@ import { useAuthStore } from "@/store/authStore";
 import { courseApi } from "@/lib/api";
 import type { Course } from "@/types";
 import { cn, getLevelColor, getLevelGradient, LEVEL_DESCRIPTIONS } from "@/lib/utils";
+import { COURSES_FALLBACK } from "@/lib/fallback-data";
 
 export default function CoursesPage() {
   const { user } = useAuthStore();
@@ -23,8 +24,9 @@ export default function CoursesPage() {
       setLoading(true);
       try {
         const response = await courseApi.list(selectedLevel || undefined);
-        setCourses(response.data.courses || []);
-      } catch { setCourses([]); } finally { setLoading(false); }
+        const data = response.data.courses || [];
+        setCourses(data.length ? data : COURSES_FALLBACK.filter((c) => !selectedLevel || c.level === selectedLevel));
+      } catch { setCourses(COURSES_FALLBACK.filter((c) => !selectedLevel || c.level === selectedLevel)); } finally { setLoading(false); }
     };
     fetch();
   }, [selectedLevel]);
