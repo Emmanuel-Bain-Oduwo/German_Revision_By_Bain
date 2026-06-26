@@ -182,16 +182,7 @@ export function Navbar() {
                   </AnimatePresence>
                 </div>
               </>
-            ) : (
-              <div className="flex items-center gap-2">
-                <Link href="/auth/login" className="text-sm font-medium text-gray-600 hover:text-brand-600 px-3 py-2 rounded-lg transition-colors">
-                  Sign in
-                </Link>
-                <Link href="/auth/register" className="text-sm font-medium bg-brand-500 hover:bg-brand-600 text-white px-4 py-2 rounded-lg transition-colors shadow-sm">
-                  Get Started
-                </Link>
-              </div>
-            )}
+            ) : null}
 
             {/* Mobile Menu Toggle */}
             <button
@@ -243,14 +234,10 @@ export function Navbar() {
                   </Link>
                 )
               )}
-              {isAuthenticated ? (
+              {isAuthenticated && (
                 <button onClick={handleLogout} className="w-full text-left px-3 py-2 text-sm text-red-600 hover:bg-red-50 rounded-lg">
                   Logout
                 </button>
-              ) : (
-                <Link href="/auth/register" onClick={() => setMobileOpen(false)} className="block px-3 py-2 text-sm font-medium text-brand-600 hover:bg-brand-50 rounded-lg">
-                  Get Started Free
-                </Link>
               )}
             </div>
           </motion.div>

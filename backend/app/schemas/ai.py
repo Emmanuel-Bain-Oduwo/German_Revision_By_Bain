@@ -93,3 +93,41 @@ class ImageDescriptionRequest(BaseModel):
 
 class ExamReadinessCalculateRequest(BaseModel):
     target_level: str = Field(..., pattern="^(A1|A2|B1)$")
+
+
+class VideoLessonSlide(BaseModel):
+    slide_number: int
+    type: str  # title, vocabulary, grammar, example, summary
+    heading: str
+    content: str
+    german_examples: List[str] = []
+    english_translations: List[str] = []
+    narrator_text: str  # text to be spoken aloud for this slide
+
+
+class VideoLessonRequest(BaseModel):
+    topic: str
+    level: str = Field(..., pattern="^(A1|A2|B1)$")
+    provider: Optional[str] = None
+
+
+class VideoLessonResponse(BaseModel):
+    title: str
+    level: str
+    topic: str
+    slides: List[VideoLessonSlide]
+    provider: str
+    total_duration_seconds: int
+
+
+class VoiceChatRequest(BaseModel):
+    transcript: str = Field(..., max_length=2000)
+    level: str = "A1"
+    conversation_history: List[ChatMessage] = []
+    provider: Optional[str] = None
+
+
+class VoiceChatResponse(BaseModel):
+    reply_text: str
+    provider: str
+    xp_earned: int = 5

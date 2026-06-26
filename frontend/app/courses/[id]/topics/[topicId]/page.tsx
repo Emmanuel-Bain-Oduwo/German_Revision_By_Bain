@@ -1196,6 +1196,799 @@ const TOPIC_LESSONS: Record<string, TopicLesson> = {
       },
     ],
   },
+
+  // ── B1 Topics ──────────────────────────────────────────────────────────────
+
+  "25": {
+    id: 25, courseId: 3, title: "Simple Past (Präteritum)", titleGerman: "Präteritum",
+    icon: "📜", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "Simple Past (Präteritum)",
+        content: "The Präteritum is the written past tense — used in novels, news articles, fairy tales, and formal writing. It is also used in speech for 'sein' and the modal verbs. You MUST master it for B1 reading and writing tasks.",
+      },
+      {
+        type: "grammar", title: "Forming the Präteritum",
+        grammar: [
+          {
+            rule: "Regular (weak) verbs: stem + -te endings: -te, -test, -te, -ten, -tet, -ten.",
+            examples: [
+              { german: "kaufen → ich kaufte, du kauftest, er kaufte", english: "to buy → I bought, you bought, he bought" },
+              { german: "lernen → wir lernten, ihr lerntet, sie lernten", english: "to learn → we learnt, you learnt, they learnt" },
+              { german: "arbeiten → ich arbeitete (stem ends in -t, add -ete)", english: "to work → I worked" },
+            ],
+          },
+          {
+            rule: "Irregular (strong) verbs change their stem vowel — these must be memorised. Key irregular forms:",
+            examples: [
+              { german: "sein → ich war, du warst, er war, wir waren", english: "to be → I was, you were, he was, we were" },
+              { german: "haben → ich hatte, du hattest, er hatte", english: "to have → I had, you had, he had" },
+              { german: "gehen → ich ging, du gingst, er ging", english: "to go → I went" },
+              { german: "kommen → ich kam, du kamst, er kam", english: "to come → I came" },
+              { german: "fahren → ich fuhr, du fuhrst, er fuhr", english: "to drive → I drove" },
+              { german: "sehen → ich sah, du sahst, er sah", english: "to see → I saw" },
+              { german: "sprechen → ich sprach, du sprachst, er sprach", english: "to speak → I spoke" },
+              { german: "nehmen → ich nahm, du nahmst, er nahm", english: "to take → I took" },
+            ],
+          },
+          {
+            rule: "Modal verbs in Präteritum (common in speech too): können→konnte, müssen→musste, wollen→wollte, dürfen→durfte, sollen→sollte, mögen→mochte.",
+            examples: [
+              { german: "Ich konnte nicht schlafen.", english: "I could not sleep." },
+              { german: "Er musste früh aufstehen.", english: "He had to get up early." },
+              { german: "Sie wollte Ärztin werden.", english: "She wanted to become a doctor." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Time Markers for Narrative",
+        vocab: [
+          { german: "damals", english: "back then / at that time", example: "Damals war das Leben einfacher.", exampleTranslation: "Back then life was simpler." },
+          { german: "früher", english: "in the past / formerly" },
+          { german: "plötzlich", english: "suddenly", example: "Plötzlich klingelte das Telefon.", exampleTranslation: "Suddenly the phone rang." },
+          { german: "danach / anschließend", english: "afterwards / subsequently" },
+          { german: "zuerst / dann / schließlich", english: "first / then / finally" },
+          { german: "als Kind", english: "as a child", example: "Als Kind wohnte ich in München.", exampleTranslation: "As a child I lived in Munich." },
+          { german: "im Jahr 2010", english: "in the year 2010" },
+          { german: "vor langer Zeit", english: "a long time ago" },
+          { german: "eines Tages", english: "one day" },
+          { german: "seitdem", english: "since then" },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Präteritum",
+        questions: [
+          { question: "Präteritum of 'sein' for 'wir':", options: ["sind", "seien", "waren", "wären"], correct: 2 },
+          { question: "Präteritum of 'kaufen' for 'ich':", options: ["kaufte", "kaufete", "habe gekauft", "kauf"], correct: 0 },
+          { question: "Präteritum of 'gehen' for 'er':", options: ["gehte", "ist gegangen", "geht", "ging"], correct: 3 },
+          { question: "'Ich konnte nicht schlafen.' Which modal verb is this?", options: ["wollen", "müssen", "können", "dürfen"], correct: 2 },
+          { question: "When is Präteritum preferred over Perfekt in speech?", options: ["For all verbs always", "For sein, haben, and modal verbs", "Only in Southern Germany", "Only for regular verbs"], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "26": {
+    id: 26, courseId: 3, title: "Passive Voice (Passiv)", titleGerman: "Passiv",
+    icon: "🔄", xpReward: 70,
+    sections: [
+      {
+        type: "intro", title: "Passive Voice (Passiv)",
+        content: "The passive shifts the focus from the actor to the action or the object being acted upon. It's widely used in German formal writing, instructions, and news. The passive is formed with 'werden' + Partizip II.",
+      },
+      {
+        type: "grammar", title: "Forming the Passive",
+        grammar: [
+          {
+            rule: "Present passive (Präsens Passiv): werden (conjugated) + Partizip II at the end.",
+            examples: [
+              { german: "Das Auto wird repariert.", english: "The car is being repaired." },
+              { german: "Die Tür wird geöffnet.", english: "The door is being opened." },
+              { german: "Die Briefe werden geschrieben.", english: "The letters are being written." },
+              { german: "Das Essen wird gekocht.", english: "The food is being cooked." },
+            ],
+          },
+          {
+            rule: "Past passive (Präteritum Passiv): wurde (conjugated) + Partizip II.",
+            examples: [
+              { german: "Das Auto wurde repariert.", english: "The car was repaired." },
+              { german: "Das Gebäude wurde 1900 gebaut.", english: "The building was built in 1900." },
+              { german: "Die E-Mail wurde gestern geschickt.", english: "The email was sent yesterday." },
+            ],
+          },
+          {
+            rule: "To mention the agent (by whom), use 'von + Dativ'.",
+            examples: [
+              { german: "Das Buch wurde von Goethe geschrieben.", english: "The book was written by Goethe." },
+              { german: "Der Kuchen wird von meiner Mutter gebacken.", english: "The cake is being baked by my mother." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Passive in Context",
+        vocab: [
+          { german: "Es wird gebaut.", english: "Construction is taking place. (lit. It is being built.)" },
+          { german: "Hier wird nicht geraucht.", english: "No smoking here. (lit. It is not smoked here.)" },
+          { german: "Das darf nicht vergessen werden.", english: "That must not be forgotten." },
+          { german: "Die Regeln werden erklärt.", english: "The rules are being explained." },
+          { german: "Der Antrag muss ausgefüllt werden.", english: "The form must be filled in." },
+          { german: "Das Paket wurde geliefert.", english: "The parcel was delivered." },
+          { german: "Die Prüfung wird vorbereitet.", english: "The exam is being prepared." },
+          { german: "Er wurde befördert.", english: "He was promoted." },
+          { german: "Das Problem wurde gelöst.", english: "The problem was solved." },
+          { german: "Deutsch wird weltweit gesprochen.", english: "German is spoken worldwide." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Passiv",
+        questions: [
+          { question: "Present passive of 'reparieren' (das Auto):", options: ["Das Auto repariert.", "Das Auto wird repariert.", "Das Auto wurde repariert.", "Das Auto ist repariert."], correct: 1 },
+          { question: "Past passive: 'Das Gebäude ___ 1900 ___.' (bauen)", options: ["wird / gebaut", "wurde / gebaut", "war / gebaut", "hat / gebaut"], correct: 1 },
+          { question: "How do you express the agent in a passive sentence?", options: ["mit + Akkusativ", "für + Akkusativ", "von + Dativ", "durch + Genitiv"], correct: 2 },
+          { question: "'Das Buch wurde von Goethe geschrieben.' Active equivalent:", options: ["Goethe schrieb das Buch.", "Das Buch schrieb Goethe.", "Von Goethe das Buch schrieb.", "Goethe hat das Buch."], correct: 0 },
+          { question: "'Der Antrag muss ausgefüllt werden.' means:", options: ["The form was filled in.", "The form is being filled in.", "The form must be filled in.", "The form can be filled in."], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "27": {
+    id: 27, courseId: 3, title: "Konjunktiv II (würde)", titleGerman: "Konjunktiv II",
+    icon: "💭", xpReward: 70,
+    sections: [
+      {
+        type: "intro", title: "Konjunktiv II",
+        content: "The Konjunktiv II is used to express wishes, hypothetical situations, polite requests, and unreal conditions. The most common way to form it is with 'würde + infinitive'. However, key verbs like sein, haben, and the modals use their own Konjunktiv II forms.",
+      },
+      {
+        type: "grammar", title: "Forming Konjunktiv II",
+        grammar: [
+          {
+            rule: "würde + infinitive — used for most verbs to express hypothetical or polite meaning.",
+            examples: [
+              { german: "Ich würde gern nach Japan reisen.", english: "I would like to travel to Japan." },
+              { german: "Würden Sie mir bitte helfen?", english: "Would you please help me?" },
+              { german: "Das würde ich nie machen.", english: "I would never do that." },
+            ],
+          },
+          {
+            rule: "Own Konjunktiv II forms (do NOT use würde with these): sein→wäre, haben→hätte, können→könnte, müssen→müsste, dürfen→dürfte, sollen→sollte, wollen→wollte.",
+            examples: [
+              { german: "Wenn ich reich wäre, würde ich reisen.", english: "If I were rich, I would travel." },
+              { german: "Ich hätte gern mehr Zeit.", english: "I would like to have more time." },
+              { german: "Das könnte schwierig sein.", english: "That could be difficult." },
+              { german: "Du solltest mehr schlafen.", english: "You should sleep more." },
+            ],
+          },
+          {
+            rule: "Unreal conditional: Wenn + Konjunktiv II … , würde/Konj.II … The wenn-clause verb goes to the end.",
+            examples: [
+              { german: "Wenn ich Zeit hätte, würde ich mehr lesen.", english: "If I had time, I would read more." },
+              { german: "Wenn das Wetter schöner wäre, gingen wir spazieren.", english: "If the weather were nicer, we would go for a walk." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Wishes & Polite Requests",
+        vocab: [
+          { german: "Ich würde gern ...", english: "I would like to ...", example: "Ich würde gern einen Tisch reservieren.", exampleTranslation: "I would like to reserve a table." },
+          { german: "Könnten Sie bitte ...?", english: "Could you please ...?" },
+          { german: "Dürfte ich ...?", english: "Might I ...? / May I ...?" },
+          { german: "Ich wünschte, ...", english: "I wish ...", example: "Ich wünschte, ich wäre in Berlin.", exampleTranslation: "I wish I were in Berlin." },
+          { german: "An deiner Stelle würde ich ...", english: "In your position I would ...", example: "An deiner Stelle würde ich den Arzt anrufen.", exampleTranslation: "If I were you, I would call the doctor." },
+          { german: "Das wäre toll!", english: "That would be great!" },
+          { german: "Wenn ich könnte, würde ich ...", english: "If I could, I would ..." },
+          { german: "Es wäre schön, wenn ...", english: "It would be nice if ..." },
+          { german: "Hätten Sie einen Moment Zeit?", english: "Would you have a moment?" },
+          { german: "Das müsste klappen.", english: "That should work out." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Konjunktiv II",
+        questions: [
+          { question: "Konjunktiv II of 'sein' for 'ich':", options: ["wäre", "würde sein", "war", "sei"], correct: 0 },
+          { question: "'Wenn ich Zeit ___, würde ich mehr lesen.' (haben)", options: ["hätte", "habe", "hatte", "würde haben"], correct: 0, explanation: "haben → hätte in Konjunktiv II. Do not use 'würde haben'." },
+          { question: "Polite: 'Würden Sie mir bitte helfen?' means:", options: ["You must help me.", "Can you help me now?", "Would you please help me?", "You should help me."], correct: 2 },
+          { question: "'Das könnte schwierig sein.' means:", options: ["That is definitely difficult.", "That was difficult.", "That could be difficult.", "That must be difficult."], correct: 2 },
+          { question: "Which is correct for an unreal condition?", options: ["Wenn ich reich bin, reise ich.", "Wenn ich reich wäre, würde ich reisen.", "Wenn ich reich würde sein, reise ich.", "Wenn ich wäre reich, ich würde reisen."], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "28": {
+    id: 28, courseId: 3, title: "Relative Clauses", titleGerman: "Relativsätze",
+    icon: "🔗", xpReward: 70,
+    sections: [
+      {
+        type: "intro", title: "Relative Clauses (Relativsätze)",
+        content: "Relative clauses add information about a noun using relative pronouns (der, die, das — similar to the definite articles). The verb goes to the END of the relative clause. They are essential for more complex, natural-sounding German.",
+      },
+      {
+        type: "grammar", title: "Relative Pronouns & Word Order",
+        grammar: [
+          {
+            rule: "Relative pronouns match the gender of the noun they refer to, but their case depends on their role in the relative clause. They are identical to der/die/das except dative plural (denen) and genitive forms.",
+            examples: [
+              { german: "Der Mann, der dort steht, ist mein Lehrer. (m, nom)", english: "The man who is standing there is my teacher." },
+              { german: "Die Frau, die ich kenne, heißt Petra. (f, acc)", english: "The woman (whom) I know is called Petra." },
+              { german: "Das Buch, das ich lese, ist sehr interessant. (n, nom)", english: "The book (that) I am reading is very interesting." },
+              { german: "Der Mann, dem ich helfe, ist krank. (m, dat)", english: "The man whom I am helping is ill." },
+            ],
+          },
+          {
+            rule: "The relative clause is a subordinate clause — the verb goes to the end. The relative clause is always separated by commas.",
+            examples: [
+              { german: "Ich habe einen Freund, der in Berlin wohnt.", english: "I have a friend who lives in Berlin." },
+              { german: "Das Restaurant, das wir besucht haben, war teuer.", english: "The restaurant (that) we visited was expensive." },
+              { german: "Die Leute, mit denen ich arbeite, sind nett.", english: "The people with whom I work are nice." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Relative Clause Patterns",
+        vocab: [
+          { german: "..., der/die/das ... ist.", english: "... who/that is ...", example: "Das ist die Stadt, die ich liebe.", exampleTranslation: "That is the city that I love." },
+          { german: "..., den/die/das ich kenne.", english: "... that/whom I know." },
+          { german: "..., dem/der/dem ich helfe.", english: "... whom I am helping. (dat)" },
+          { german: "..., mit dem/der ich arbeite.", english: "... with whom I work." },
+          { german: "..., der/die/das mir gefällt.", english: "... that I like." },
+          { german: "..., was mich überrascht hat.", english: "... which surprised me. (was — refers to whole clause or indefinite pronoun)" },
+          { german: "jemand, der ...", english: "someone who ..." },
+          { german: "alles, was ...", english: "everything that ..." },
+          { german: "nichts, was ...", english: "nothing that ..." },
+          { german: "das Einzige, was ...", english: "the only thing that ..." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Relative Clauses",
+        questions: [
+          { question: "'Der Mann, ___ dort steht, ist mein Lehrer.' (masculine, nominative)", options: ["den", "dem", "der", "das"], correct: 2 },
+          { question: "'Das Buch, ___ ich lese, ist gut.' (neuter, accusative)", options: ["der", "den", "dem", "das"], correct: 3 },
+          { question: "Where does the verb go in a relative clause?", options: ["Position 2", "Position 1", "At the end", "After the relative pronoun"], correct: 2 },
+          { question: "'Die Leute, mit ___ ich arbeite, sind nett.' (dative plural)", options: ["die", "den", "denen", "deren"], correct: 2 },
+          { question: "'Ich habe einen Freund, der in Berlin wohnt.' The relative pronoun 'der' refers to:", options: ["ich", "einen Freund", "Berlin", "wohnt"], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "29": {
+    id: 29, courseId: 3, title: "Infinitive with zu", titleGerman: "Infinitiv mit zu",
+    icon: "➡️", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "Infinitive with zu",
+        content: "Many German verbs, adjectives, and nouns are followed by an infinitive with 'zu'. This construction links two actions together. With separable verbs, 'zu' goes between the prefix and the verb stem.",
+      },
+      {
+        type: "grammar", title: "Infinitive with zu — Rules",
+        grammar: [
+          {
+            rule: "zu + infinitive after verbs like versuchen, vergessen, beginnen, aufhören, vorhaben, empfehlen, hoffen, planen.",
+            examples: [
+              { german: "Ich versuche, Deutsch zu lernen.", english: "I am trying to learn German." },
+              { german: "Er vergisst immer, die Tür zu schließen.", english: "He always forgets to close the door." },
+              { german: "Sie beginnt, Klavier zu spielen.", english: "She is beginning to play the piano." },
+              { german: "Ich habe vor, nach Deutschland zu ziehen.", english: "I plan to move to Germany." },
+            ],
+          },
+          {
+            rule: "With separable verbs: prefix + zu + stem (all written as one word).",
+            examples: [
+              { german: "aufräumen → aufzuräumen", english: "to tidy up" },
+              { german: "Vergiss nicht, dein Zimmer aufzuräumen!", english: "Don't forget to tidy up your room!" },
+              { german: "anrufen → anzurufen", english: "to call" },
+              { german: "Er versprach, mich anzurufen.", english: "He promised to call me." },
+            ],
+          },
+          {
+            rule: "After adjectives with 'es ist … zu': Es ist wichtig/schwierig/möglich/interessant zu + infinitive.",
+            examples: [
+              { german: "Es ist wichtig, gesund zu essen.", english: "It is important to eat healthily." },
+              { german: "Es ist schwierig, Deutsch zu lernen.", english: "It is difficult to learn German." },
+              { german: "Es ist schön, hier zu sein.", english: "It is nice to be here." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Infinitiv mit zu",
+        questions: [
+          { question: "'Ich versuche, Deutsch ___ lernen.'", options: ["zu", "um zu", "ohne", "statt"], correct: 0 },
+          { question: "Infinitive with zu of separable verb 'aufräumen':", options: ["zu aufräumen", "aufräumen zu", "aufzuräumen", "zu räumen auf"], correct: 2 },
+          { question: "'Er vergisst immer, die Tür zu schließen.' means:", options: ["He always forgets to open the door", "He always forgets to close the door", "He always closes the door", "He never closes the door"], correct: 1 },
+          { question: "'Es ist wichtig, gesund zu essen.' means:", options: ["It was important to eat healthily", "It is impossible to eat healthily", "It is important to eat healthily", "Eating healthily is not important"], correct: 2 },
+          { question: "Which verb is NOT followed by 'zu + infinitive'?", options: ["versuchen", "vergessen", "können", "hoffen"], correct: 2, explanation: "Modal verbs (können, müssen, etc.) take a plain infinitive without 'zu'." },
+        ],
+      },
+    ],
+  },
+
+  "30": {
+    id: 30, courseId: 3, title: "Genitive Case", titleGerman: "Genitiv",
+    icon: "🏛️", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "The Genitive Case (Genitiv)",
+        content: "The genitive expresses possession or belonging — it's the equivalent of 'of' or apostrophe-s in English. While spoken German often replaces it with 'von + dative', the genitive is essential for reading, writing, and the B1 exam.",
+      },
+      {
+        type: "grammar", title: "Genitive Articles & Noun Endings",
+        grammar: [
+          {
+            rule: "Genitive articles: der → des (m), die → der (f), das → des (n), die → der (pl). Masculine and neuter nouns add -s or -es.",
+            examples: [
+              { german: "das Auto des Mannes (m)", english: "the man's car" },
+              { german: "das Haus der Frau (f)", english: "the woman's house" },
+              { german: "der Name des Kindes (n)", english: "the child's name" },
+              { german: "die Meinung der Leute (pl)", english: "the people's opinion" },
+            ],
+          },
+          {
+            rule: "Genitive prepositions (always genitive): wegen (because of), trotz (despite), während (during), außerhalb (outside of), innerhalb (inside of), statt (instead of).",
+            examples: [
+              { german: "Wegen des schlechten Wetters blieben wir zu Hause.", english: "Because of the bad weather we stayed at home." },
+              { german: "Trotz des Regens ging er spazieren.", english: "Despite the rain he went for a walk." },
+              { german: "Während des Unterrichts darf man nicht telefonieren.", english: "During the lesson one may not make phone calls." },
+              { german: "Statt des Kaffees trank sie Tee.", english: "Instead of the coffee she drank tea." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Genitive in Use",
+        vocab: [
+          { german: "wegen + Genitiv", english: "because of", example: "Wegen des Staus kam er zu spät.", exampleTranslation: "Because of the traffic jam he arrived late." },
+          { german: "trotz + Genitiv", english: "despite", example: "Trotz der Kälte ging sie joggen.", exampleTranslation: "Despite the cold she went jogging." },
+          { german: "während + Genitiv", english: "during" },
+          { german: "das Ende des Films", english: "the end of the film" },
+          { german: "die Hauptstadt des Landes", english: "the capital of the country" },
+          { german: "der Beginn des Semesters", english: "the start of the semester" },
+          { german: "die Qualität der Produkte", english: "the quality of the products" },
+          { german: "außerhalb der Stadt", english: "outside of the city" },
+          { german: "innerhalb einer Stunde", english: "within an hour" },
+          { german: "statt + Genitiv (instead of)", english: "instead of", example: "Statt des Busses nahm sie das Taxi.", exampleTranslation: "Instead of the bus she took the taxi." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Genitiv",
+        questions: [
+          { question: "'Das Auto ___ Mannes.' (des/der, masculine genitive)", options: ["der", "dem", "des", "den"], correct: 2 },
+          { question: "'Wegen ___ schlechten Wetters ...' (das Wetter, genitive)", options: ["dem", "des", "der", "den"], correct: 1 },
+          { question: "Which preposition takes the genitive?", options: ["mit", "aus", "trotz", "bei"], correct: 2 },
+          { question: "'Trotz des Regens ging er spazieren.' means:", options: ["Because of the rain he stayed home", "Despite the rain he went for a walk", "During the rain he walked", "Without rain he walked"], correct: 1 },
+          { question: "Genitive of 'die Frau':", options: ["dem Frau", "der Frau", "des Frau", "die Frau"], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "31": {
+    id: 31, courseId: 3, title: "Society & Current Affairs", titleGerman: "Gesellschaft und Aktualität",
+    icon: "🌍", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "Society & Current Affairs",
+        content: "B1 requires you to discuss social topics, express opinions, and understand authentic texts. This lesson builds the vocabulary and phrases needed to talk about society, politics, and current affairs in German.",
+      },
+      {
+        type: "vocab", title: "Society Vocabulary",
+        vocab: [
+          { german: "die Gesellschaft", english: "society", example: "In unserer Gesellschaft gibt es viele Probleme.", exampleTranslation: "In our society there are many problems." },
+          { german: "die Umwelt / der Klimawandel", english: "the environment / climate change" },
+          { german: "die Arbeitslosigkeit", english: "unemployment" },
+          { german: "die Integration / die Migration", english: "integration / migration" },
+          { german: "die Gleichberechtigung", english: "equal rights / gender equality" },
+          { german: "das Gesundheitswesen", english: "the healthcare system" },
+          { german: "die Bildung / das Bildungssystem", english: "education / the education system", example: "Das Bildungssystem in Deutschland ist regional unterschiedlich.", exampleTranslation: "The education system in Germany varies by region." },
+          { german: "die Regierung / das Parlament", english: "the government / parliament" },
+          { german: "wählen / die Wahl", english: "to vote / the election" },
+          { german: "die Digitalisierung", english: "digitalisation", example: "Die Digitalisierung verändert die Arbeitswelt.", exampleTranslation: "Digitalisation is changing the world of work." },
+        ],
+      },
+      {
+        type: "vocab", title: "Expressing Opinions",
+        vocab: [
+          { german: "Ich bin der Meinung, dass ...", english: "I am of the opinion that ...", example: "Ich bin der Meinung, dass mehr für den Klimaschutz getan werden muss.", exampleTranslation: "I am of the opinion that more must be done for climate protection." },
+          { german: "Meiner Ansicht nach ...", english: "In my view ..." },
+          { german: "Einerseits ... andererseits ...", english: "On the one hand ... on the other hand ..." },
+          { german: "Ich stimme zu / Ich stimme nicht zu.", english: "I agree / I disagree." },
+          { german: "Das halte ich für wichtig.", english: "I consider that to be important." },
+          { german: "Man sollte / Man müsste ...", english: "One should / One would have to ..." },
+          { german: "Es gibt Vor- und Nachteile.", english: "There are advantages and disadvantages." },
+          { german: "Auf der einen Seite ... auf der anderen Seite ...", english: "On the one side ... on the other side ..." },
+          { german: "Das Problem ist, dass ...", english: "The problem is that ..." },
+          { german: "Eine Lösung wäre, ...", english: "One solution would be ..." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Society & Opinions",
+        questions: [
+          { question: "What does 'die Gleichberechtigung' mean?", options: ["unemployment", "equal rights", "digitalisation", "healthcare"], correct: 1 },
+          { question: "'Meiner Ansicht nach ...' introduces:", options: ["a fact", "a question", "your opinion", "a definition"], correct: 2 },
+          { question: "'Einerseits ... andererseits ...' is used to:", options: ["give examples", "present two sides of an argument", "ask for clarification", "express agreement"], correct: 1 },
+          { question: "What does 'die Digitalisierung verändert die Arbeitswelt' mean?", options: ["Digitalisation destroys jobs", "Digitalisation is changing the world of work", "Digital work is important", "The working world invented digitalisation"], correct: 1 },
+          { question: "'Es gibt Vor- und Nachteile.' means:", options: ["It is very difficult.", "There are only advantages.", "There are advantages and disadvantages.", "The problem is solved."], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "32": {
+    id: 32, courseId: 3, title: "Environment & Nature", titleGerman: "Umwelt und Natur",
+    icon: "🌱", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "Environment & Nature",
+        content: "Environmental topics appear frequently in B1 reading and speaking tasks. Learn the key vocabulary for nature, ecological problems, and sustainable living to handle these texts confidently.",
+      },
+      {
+        type: "vocab", title: "Environment Vocabulary",
+        vocab: [
+          { german: "die Umwelt schützen", english: "to protect the environment", example: "Wir müssen die Umwelt schützen.", exampleTranslation: "We must protect the environment." },
+          { german: "der Klimawandel / die Erderwärmung", english: "climate change / global warming" },
+          { german: "die erneuerbaren Energien", english: "renewable energies", example: "Solar- und Windenergie sind erneuerbare Energien.", exampleTranslation: "Solar and wind energy are renewable energies." },
+          { german: "der CO₂-Ausstoß", english: "CO₂ emissions" },
+          { german: "recyceln / der Müll", english: "to recycle / the rubbish/waste" },
+          { german: "die Mülltrennung", english: "waste separation/sorting" },
+          { german: "der Treibhauseffekt", english: "the greenhouse effect" },
+          { german: "die Abholzung", english: "deforestation" },
+          { german: "umweltfreundlich / nachhaltig", english: "environmentally friendly / sustainable", example: "Ich versuche, nachhaltig zu leben.", exampleTranslation: "I try to live sustainably." },
+          { german: "öffentliche Verkehrsmittel nutzen", english: "to use public transport", example: "Nutze öffentliche Verkehrsmittel statt des Autos.", exampleTranslation: "Use public transport instead of the car." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Environment",
+        questions: [
+          { question: "What is 'die Mülltrennung'?", options: ["recycling plant", "waste separation", "CO₂ reduction", "renewable energy"], correct: 1 },
+          { question: "'Umweltfreundlich' means:", options: ["environmentally harmful", "environmentally friendly", "sustainable", "natural"], correct: 1 },
+          { question: "'Die erneuerbaren Energien' includes:", options: ["coal and oil", "nuclear energy", "solar and wind energy", "diesel and petrol"], correct: 2 },
+          { question: "'Wir müssen die Umwelt schützen.' means:", options: ["We are destroying the environment", "We must study the environment", "We must protect the environment", "We pollute the environment"], correct: 2 },
+          { question: "What does 'nachhaltig' mean?", options: ["cheap", "modern", "sustainable", "digital"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "33": {
+    id: 33, courseId: 3, title: "Expressing Opinions", titleGerman: "Meinungen äußern",
+    icon: "💬", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "Expressing Opinions (Meinungen äußern)",
+        content: "The B1 speaking exam requires you to express and justify opinions, agree or disagree politely, and react to others' views. This lesson gives you all the tools to do this fluently and confidently.",
+      },
+      {
+        type: "vocab", title: "Opinion & Discussion Phrases",
+        vocab: [
+          { german: "Ich finde, dass ...", english: "I think / find that ...", example: "Ich finde, dass Sport wichtig für die Gesundheit ist.", exampleTranslation: "I think that sport is important for health." },
+          { german: "Meiner Meinung nach ...", english: "In my opinion ..." },
+          { german: "Ich bin davon überzeugt, dass ...", english: "I am convinced that ..." },
+          { german: "Das sehe ich anders.", english: "I see that differently." },
+          { german: "Da haben Sie recht.", english: "You are right about that." },
+          { german: "Das stimmt, aber ...", english: "That is true, but ..." },
+          { german: "Ich bin damit einverstanden.", english: "I agree with that." },
+          { german: "Ich bezweifle, dass ...", english: "I doubt that ..." },
+          { german: "Zum Beispiel ...", english: "For example ..." },
+          { german: "Das hängt davon ab, ob ...", english: "That depends on whether ..." },
+        ],
+      },
+      {
+        type: "vocab", title: "Structuring Your Argument",
+        vocab: [
+          { german: "Erstens / Zweitens / Drittens", english: "Firstly / Secondly / Thirdly", example: "Erstens ist es billiger, zweitens ist es schneller.", exampleTranslation: "Firstly it is cheaper, secondly it is faster." },
+          { german: "Außerdem / Darüber hinaus", english: "Moreover / Furthermore" },
+          { german: "Im Gegensatz dazu ...", english: "In contrast to that ..." },
+          { german: "Deshalb / Deswegen / Daher", english: "Therefore / That is why / Hence" },
+          { german: "Obwohl ...", english: "Although ...", example: "Obwohl es teuer ist, kaufe ich es.", exampleTranslation: "Although it is expensive, I am buying it." },
+          { german: "Zusammenfassend kann man sagen, dass ...", english: "In summary one can say that ..." },
+          { german: "Auf der einen Seite ... auf der anderen Seite ...", english: "On the one hand ... on the other hand ..." },
+          { german: "Ich würde empfehlen, ...", english: "I would recommend ..." },
+          { german: "Es kommt darauf an.", english: "It depends." },
+          { german: "Was mich besonders interessiert / stört ist ...", english: "What particularly interests / bothers me is ..." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Expressing Opinions",
+        questions: [
+          { question: "'Das sehe ich anders.' means:", options: ["I agree completely.", "I see that differently.", "That is correct.", "I don't understand."], correct: 1 },
+          { question: "Which phrase introduces a counter-argument?", options: ["Ich finde, dass ...", "Das stimmt, aber ...", "Erstens ...", "Meiner Meinung nach ..."], correct: 1 },
+          { question: "'Deshalb' means:", options: ["Although", "Furthermore", "Therefore", "In contrast"], correct: 2 },
+          { question: "'Obwohl es teuer ist, kaufe ich es.' — 'obwohl' sends the verb to:", options: ["Position 1", "Position 2", "The end of the clause", "After the subject"], correct: 2 },
+          { question: "How do you say 'In my opinion' in German?", options: ["Ich denke so.", "Meiner Meinung nach", "Das ist meine Idee.", "Ich glaube vielleicht."], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "34": {
+    id: 34, courseId: 3, title: "Goethe B1: Lesen (Reading)", titleGerman: "Lesen",
+    icon: "📖", xpReward: 80,
+    sections: [
+      {
+        type: "intro", title: "B1 Reading (Lesen)",
+        content: "The Goethe B1 Lesen section has 3 parts: matching headings to texts, reading a longer article and answering true/false/not mentioned, and reading short notices to find information. This lesson trains the key strategies and vocabulary.",
+      },
+      {
+        type: "vocab", title: "Reading Strategy Vocabulary",
+        vocab: [
+          { german: "die Überschrift", english: "the heading / headline", example: "Welche Überschrift passt zum Text?", exampleTranslation: "Which heading fits the text?" },
+          { german: "der Abschnitt", english: "the paragraph/section" },
+          { german: "sinngemäß / inhaltlich", english: "according to meaning / in terms of content" },
+          { german: "Richtig / Falsch / Nicht im Text", english: "True / False / Not mentioned in the text" },
+          { german: "der Kerngedanke", english: "the main idea / key point" },
+          { german: "laut dem Text ...", english: "according to the text ..." },
+          { german: "Es steht im Text, dass ...", english: "It says in the text that ..." },
+          { german: "der Verfasser / die Verfasserin", english: "the author (m/f)" },
+          { german: "zusammenfassen", english: "to summarise", example: "Fassen Sie den Text zusammen.", exampleTranslation: "Summarise the text." },
+          { german: "der Hauptgedanke", english: "the main thought/idea" },
+        ],
+      },
+      {
+        type: "quiz", title: "B1 Reading Practice",
+        questions: [
+          {
+            question: "Text: 'Der Verein wurde 1998 gegründet. Er hat heute über 500 Mitglieder und organisiert jeden Monat kulturelle Veranstaltungen.' When was the club founded?",
+            options: ["2008", "1998", "500 years ago", "This year"],
+            correct: 1,
+          },
+          {
+            question: "Heading options: A) Gesund essen B) Sport und Fitness C) Reisen im Urlaub. Text: 'Experten empfehlen täglich 30 Minuten Bewegung. Schon ein Spaziergang hilft.' Best heading?",
+            options: ["A", "B", "C", "None fits"],
+            correct: 1, explanation: "The text is about movement and exercise → B) Sport und Fitness.",
+          },
+          {
+            question: "Text: 'Die Bibliothek ist montags geschlossen. Di–Fr 9–18 Uhr, Sa 10–14 Uhr.' Statement: 'The library is open on Saturday afternoon.' True/False/Not mentioned?",
+            options: ["True", "False", "Not mentioned in the text"],
+            correct: 1, explanation: "Saturday (Sa) is open 10–14 Uhr. 14 Uhr = 2 pm = not 'afternoon'. False.",
+          },
+          {
+            question: "Ad: 'Sprachkurs Englisch B2. Voraussetzung: B1-Kenntnisse. Beginn: Oktober. Unkostenbeitrag: 120 €.' Who is this course for?",
+            options: ["Complete beginners", "People with B1 English knowledge", "German speakers only", "Free for everyone"],
+            correct: 1,
+          },
+          {
+            question: "'Nicht im Text' means the statement is:",
+            options: ["True according to the text", "False according to the text", "Neither confirmed nor denied by the text", "Wrong German"],
+            correct: 2, explanation: "'Nicht im Text' = the text neither confirms nor denies the statement — it simply isn't mentioned.",
+          },
+        ],
+      },
+    ],
+  },
+
+  "35": {
+    id: 35, courseId: 3, title: "Goethe B1: Hören (Listening)", titleGerman: "Hören",
+    icon: "🎧", xpReward: 80,
+    sections: [
+      {
+        type: "intro", title: "B1 Listening (Hören)",
+        content: "The Goethe B1 Hören section has 4 parts: formal announcements, conversations, a longer interview/discussion, and short dialogues. This lesson covers key strategies, frequent listening vocabulary, and practice questions.",
+      },
+      {
+        type: "vocab", title: "Listening Context Vocabulary",
+        vocab: [
+          { german: "die Durchsage", english: "the announcement (public/official)", example: "Achtung, eine Durchsage: Zug 42 hat Verspätung.", exampleTranslation: "Attention, an announcement: Train 42 is delayed." },
+          { german: "die Verspätung", english: "the delay" },
+          { german: "der Sprecher / die Sprecherin", english: "the speaker (m/f)" },
+          { german: "die Meinung äußern", english: "to express an opinion" },
+          { german: "zustimmen / widersprechen", english: "to agree / to disagree" },
+          { german: "die Veranstaltung", english: "the event" },
+          { german: "der Termin", english: "the appointment / date" },
+          { german: "vereinbaren", english: "to arrange / agree on", example: "Wir möchten einen Termin vereinbaren.", exampleTranslation: "We would like to arrange an appointment." },
+          { german: "die Uhrzeit / der Ort", english: "the time / the place" },
+          { german: "das Formular ausfüllen", english: "to fill in the form" },
+        ],
+      },
+      {
+        type: "vocab", title: "Exam Strategies for Listening",
+        vocab: [
+          { german: "Lies die Fragen vor dem Hören.", english: "Read the questions before listening." },
+          { german: "Schlüsselwörter unterstreichen", english: "Underline key words (in the questions)." },
+          { german: "Zahlen und Daten notieren", english: "Note down numbers and dates." },
+          { german: "Du hörst den Text zweimal.", english: "You hear the text twice." },
+          { german: "Beim ersten Hören: Hauptidee erfassen.", english: "On the first listen: grasp the main idea." },
+          { german: "Beim zweiten Hören: Details prüfen.", english: "On the second listen: check the details." },
+          { german: "Keine Antwort auslassen!", english: "Don't leave any answer blank!" },
+          { german: "die Falle", english: "the trap (distractor in a listening task)", example: "Vorsicht vor Fallen — sie nennen beide Optionen, wählen aber eine.", exampleTranslation: "Beware of traps — they mention both options but choose one." },
+          { german: "der Kontext", english: "the context" },
+          { german: "sinnvoll / passend", english: "sensible / fitting / appropriate" },
+        ],
+      },
+      {
+        type: "quiz", title: "B1 Listening Practice (Text-based)",
+        questions: [
+          {
+            question: "Announcement: 'Der Zug nach Hamburg fährt heute nicht von Gleis 3, sondern von Gleis 7 ab.' Which platform?",
+            options: ["Platform 3", "Platform 7", "Platform 37", "The train is cancelled"],
+            correct: 1,
+          },
+          {
+            question: "Dialogue: A says 'Sollen wir uns um 14 oder um 16 Uhr treffen?' B says 'Halb drei wäre mir lieber.' What time does B prefer?",
+            options: ["14:00", "14:30", "15:30", "16:00"],
+            correct: 1, explanation: "'Halb drei' = 2:30 pm = 14:30. B prefers 14:30.",
+          },
+          {
+            question: "What is the best strategy for the first listen in a B1 Hören task?",
+            options: ["Write down every word", "Grasp the main idea", "Check grammar", "Translate everything"],
+            correct: 1,
+          },
+          {
+            question: "Interview: 'Ich arbeite seit zehn Jahren als Lehrerin und finde meinen Job toll, auch wenn er manchmal stressig ist.' How does she feel about her job overall?",
+            options: ["She hates it", "She finds it easy", "She likes it despite the stress", "She wants to change career"],
+            correct: 2,
+          },
+          {
+            question: "What does 'die Falle' mean in a listening exam context?",
+            options: ["A trap / distractor answer", "A difficult word", "A missing answer", "A wrong question"], correct: 0,
+          },
+        ],
+      },
+    ],
+  },
+
+  "36": {
+    id: 36, courseId: 3, title: "Goethe B1: Schreiben (Writing)", titleGerman: "Schreiben",
+    icon: "✍️", xpReward: 80,
+    sections: [
+      {
+        type: "intro", title: "B1 Writing (Schreiben)",
+        content: "The B1 Schreiben exam has two tasks: writing a forum post/comment (about 80 words) and writing a semi-formal letter or email (about 100 words). You must address all bullet points given, use appropriate register, and structure your text clearly.",
+      },
+      {
+        type: "vocab", title: "Formal Letter / Email Phrases",
+        vocab: [
+          { german: "Sehr geehrte Damen und Herren,", english: "Dear Sir/Madam, (formal, unknown recipient)" },
+          { german: "Sehr geehrter Herr [Name],", english: "Dear Mr [Name], (formal, known recipient)" },
+          { german: "Sehr geehrte Frau [Name],", english: "Dear Ms [Name], (formal, known recipient)" },
+          { german: "Mit freundlichen Grüßen,", english: "Kind regards, (formal sign-off)" },
+          { german: "Liebe/r [Name],", english: "Dear [Name], (semi-formal/friendly)" },
+          { german: "Viele Grüße / Herzliche Grüße,", english: "Best wishes / Warm regards," },
+          { german: "Ich schreibe Ihnen bezüglich ...", english: "I am writing to you regarding ..." },
+          { german: "Ich würde mich freuen, von Ihnen zu hören.", english: "I would be pleased to hear from you." },
+          { german: "Könnten Sie mir bitte mitteilen, ob ...?", english: "Could you please let me know whether ...?" },
+          { german: "Ich bedanke mich für Ihre Hilfe.", english: "I thank you for your help." },
+        ],
+      },
+      {
+        type: "vocab", title: "Forum Post & Discussion Phrases",
+        vocab: [
+          { german: "Ich habe den Beitrag von ... gelesen und ...", english: "I have read the post by ... and ..." },
+          { german: "Ich stimme zu, dass ...", english: "I agree that ..." },
+          { german: "Ich sehe das etwas anders.", english: "I see that a little differently." },
+          { german: "Meiner Erfahrung nach ...", english: "In my experience ..." },
+          { german: "Ein gutes Beispiel dafür ist ...", english: "A good example of this is ..." },
+          { german: "Ich würde vorschlagen, dass ...", english: "I would suggest that ..." },
+          { german: "Das Thema ist sehr aktuell.", english: "The topic is very current/relevant." },
+          { german: "Abschließend möchte ich sagen, dass ...", english: "In conclusion I would like to say that ..." },
+          { german: "Ich hoffe, dass meine Meinung nützlich ist.", english: "I hope that my opinion is useful." },
+          { german: "Was denken Sie darüber?", english: "What do you think about it?" },
+        ],
+      },
+      {
+        type: "quiz", title: "B1 Writing Practice",
+        questions: [
+          { question: "What is the correct formal opening for a letter to an unknown company?", options: ["Liebe Firma,", "Hallo,", "Sehr geehrte Damen und Herren,", "Guten Tag alle,"], correct: 2 },
+          { question: "Correct formal sign-off for a letter:", options: ["Tschüss!", "Bis bald,", "Mit freundlichen Grüßen,", "Herzlichst,"], correct: 2 },
+          { question: "In the B1 Schreiben, approximately how long should your letter/email be?", options: ["20 words", "50 words", "100 words", "300 words"], correct: 2 },
+          { question: "'Könnten Sie mir bitte mitteilen, ob ...?' is used to:", options: ["Give information", "Politely request information", "Say goodbye", "Agree with someone"], correct: 1 },
+          { question: "What must you do with ALL bullet points given in the writing task?", options: ["Choose two to address", "Ignore them and write freely", "Address all of them", "Only use them for ideas"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "37": {
+    id: 37, courseId: 3, title: "Goethe B1: Sprechen (Speaking)", titleGerman: "Sprechen",
+    icon: "🎤", xpReward: 80,
+    sections: [
+      {
+        type: "intro", title: "B1 Speaking (Sprechen)",
+        content: "The Goethe B1 Sprechen exam has two parts: discussing a topic together with a partner (you both express opinions and make a joint decision), and presenting something individually. Fluency, interaction, and vocabulary range all count.",
+      },
+      {
+        type: "vocab", title: "Discussion & Interaction Phrases",
+        vocab: [
+          { german: "Was meinen Sie dazu?", english: "What do you think about that?", example: "Das ist meine Meinung. Was meinen Sie dazu?", exampleTranslation: "That is my opinion. What do you think about that?" },
+          { german: "Ich bin Ihrer Meinung.", english: "I agree with you. (formal)" },
+          { german: "Könnten wir uns vielleicht auf ... einigen?", english: "Could we perhaps agree on ...?" },
+          { german: "Das finde ich auch / nicht.", english: "I also think that / I don't think that." },
+          { german: "Das ist ein guter Punkt.", english: "That is a good point." },
+          { german: "Darf ich kurz etwas hinzufügen?", english: "May I quickly add something?" },
+          { german: "Ich würde lieber ... wählen, weil ...", english: "I would rather choose ... because ..." },
+          { german: "Was schlagen Sie vor?", english: "What do you suggest?" },
+          { german: "Ich bin nicht sicher, ob ...", english: "I am not sure whether ..." },
+          { german: "Lassen Sie uns zusammenfassen.", english: "Let us summarise." },
+        ],
+      },
+      {
+        type: "vocab", title: "Filler & Repair Phrases",
+        vocab: [
+          { german: "Ich meine, ...", english: "I mean, ..." },
+          { german: "Also, ...", english: "Well, / So, ..." },
+          { german: "Wie sagt man das auf Deutsch?", english: "How do you say that in German?" },
+          { german: "Ich meinte eigentlich ...", english: "What I actually meant was ..." },
+          { german: "Könnten Sie das bitte wiederholen?", english: "Could you please repeat that?" },
+          { german: "Entschuldigung, ich habe das nicht verstanden.", english: "Sorry, I didn't understand that." },
+          { german: "Das ist eine gute Frage.", english: "That is a good question." },
+          { german: "Einen Moment bitte, ich überlege ...", english: "One moment please, I'm thinking ..." },
+          { german: "sozusagen", english: "so to speak / as it were" },
+          { german: "Das kommt darauf an.", english: "That depends." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: B1 Speaking",
+        questions: [
+          { question: "Your partner suggests an idea you like. Best response:", options: ["Nein, das stimmt nicht.", "Das ist ein guter Punkt.", "Ich verstehe Sie nicht.", "Bitte wiederholen Sie."], correct: 1 },
+          { question: "'Könnten wir uns vielleicht auf ... einigen?' is used to:", options: ["Disagree strongly", "Ask for repetition", "Propose a joint decision", "End the conversation"], correct: 2 },
+          { question: "You don't know a word in German. Best filler:", options: ["Stop speaking", "Use English", "Wie sagt man das auf Deutsch?", "Say nothing"], correct: 2 },
+          { question: "Part 1 of B1 Sprechen requires you to:", options: ["Read a text aloud", "Discuss a topic and reach a joint decision with your partner", "Write an email", "Describe a picture silently"], correct: 1 },
+          { question: "'Darf ich kurz etwas hinzufügen?' means:", options: ["Could you please repeat that?", "May I quickly add something?", "I disagree with you.", "Let us summarise."], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "38": {
+    id: 38, courseId: 3, title: "Full B1 Mock Exam", titleGerman: "Vollständige B1 Prüfung",
+    icon: "🏆", xpReward: 110,
+    sections: [
+      {
+        type: "intro", title: "Full B1 Mock Exam",
+        content: "This is your final practice session before the Goethe B1 exam. It contains exam-style questions across all four skills: Lesen, Hören (text-based), Schreiben, and Sprechen. Take your time and apply everything you have learnt.",
+      },
+      {
+        type: "vocab", title: "Essential B1 Exam Tips",
+        vocab: [
+          { german: "Lies alle Aufgaben zuerst durch.", english: "Read all tasks through first." },
+          { german: "Achte auf Schlüsselwörter.", english: "Pay attention to key words." },
+          { german: "Beantworte alle Fragen.", english: "Answer all questions." },
+          { german: "Überprüfe deine Grammatik.", english: "Check your grammar." },
+          { german: "Schreibe vollständige Sätze.", english: "Write complete sentences." },
+          { german: "Nutze einen vielfältigen Wortschatz.", english: "Use a varied vocabulary." },
+          { german: "Bleibe beim Thema.", english: "Stay on topic." },
+          { german: "Verwalte deine Zeit gut.", english: "Manage your time well." },
+          { german: "Nicht im Text = weder bestätigt noch verneint.", english: "Not in text = neither confirmed nor denied." },
+          { german: "Viel Erfolg!", english: "Good luck!" },
+        ],
+      },
+      {
+        type: "quiz", title: "B1 Mock Exam — Mixed Questions",
+        questions: [
+          {
+            question: "Text: 'Maria arbeitet seit fünf Jahren bei einer Berliner IT-Firma. Obwohl ihr Gehalt gut ist, möchte sie sich beruflich verändern, weil sie eine neue Herausforderung sucht.' Why does Maria want to change jobs?",
+            options: ["Her salary is too low", "She is moving to a new city", "She is looking for a new challenge", "She was made redundant"],
+            correct: 2, explanation: "'weil sie eine neue Herausforderung sucht' = because she is looking for a new challenge.",
+          },
+          {
+            question: "Fill in: 'Das Projekt wurde ___ dem Team erfolgreich abgeschlossen.' (by — passive agent)",
+            options: ["für", "mit", "von", "durch"],
+            correct: 2, explanation: "Passive agent: von + Dativ.",
+          },
+          {
+            question: "'Wenn ich mehr Freizeit ___, würde ich öfter reisen.' (haben, Konjunktiv II)",
+            options: ["hätte", "habe", "hatte", "würde haben"],
+            correct: 0,
+          },
+          {
+            question: "Notice: 'Achtung! Ab dem 1. Juli gelten neue Öffnungszeiten: Mo–Fr 8–17 Uhr (bisher 9–18 Uhr). Samstag weiterhin 10–14 Uhr.' What changes from 1 July?",
+            options: ["Saturday hours change", "The shop closes permanently", "Weekday opening hours change to 8–17", "Nothing changes"],
+            correct: 2,
+          },
+          {
+            question: "You are in the B1 Sprechen exam. Your partner says: 'Ich finde, wir sollten Option A wählen.' You prefer Option B. Best response:",
+            options: ["Nein.", "Das stimmt, aber ich würde lieber Option B wählen, weil sie flexibler ist.", "Ich verstehe Sie nicht.", "Option A ist falsch."],
+            correct: 1, explanation: "Acknowledge their point ('Das stimmt'), then politely disagree with a reason — exactly what examiners want to hear.",
+          },
+        ],
+      },
+    ],
+  },
 };
 
 function getFallbackLesson(topicId: string, courseId: string): TopicLesson {
@@ -1290,6 +2083,12 @@ export default function TopicLessonPage() {
                 <Link href={`/courses/${courseId}`} className="w-full py-3 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold hover:shadow-md transition-all flex items-center justify-center gap-2">
                   <BookOpen className="w-4 h-4" /> Back to Course
                 </Link>
+                {/* Next topic shortcut — go to next topic id */}
+                {lesson.id < (lesson.courseId === 1 ? 12 : lesson.courseId === 2 ? 24 : 38) && (
+                  <Link href={`/courses/${courseId}/topics/${lesson.id + 1}`} className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold hover:shadow-md transition-all flex items-center justify-center gap-2">
+                    Next Topic <ChevronRight className="w-4 h-4" />
+                  </Link>
+                )}
               </div>
             </motion.div>
           </main>

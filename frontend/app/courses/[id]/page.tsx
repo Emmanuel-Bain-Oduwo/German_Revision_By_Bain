@@ -111,7 +111,10 @@ export default function CourseDetailPage() {
       setLoading(true);
       try {
         const response = await courseApi.get(Number(id));
-        setCourse(response.data || COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id)) || null);
+        const fallback = COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id));
+        const data = response.data || fallback;
+        if (data) setCourse({ ...data, is_premium: false, topics: fallback?.topics || data.topics });
+        else setCourse(null);
       } catch {
         setCourse(COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id)) || null);
       } finally { setLoading(false); }
@@ -211,6 +214,23 @@ export default function CourseDetailPage() {
               </motion.div>
             )}
 
+            {/* Level path */}
+            <div className="flex items-center gap-2 mb-6">
+              {[
+                { id: 1, level: "A1", label: "Foundation" },
+                { id: 2, level: "A2", label: "Elementary" },
+                { id: 3, level: "B1", label: "Independent" },
+              ].map((step, idx, arr) => (
+                <div key={step.id} className="flex items-center gap-2">
+                  <Link href={`/courses/${step.id}`} className={cn("flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-sm font-semibold border transition-all", course.id === step.id ? "bg-brand-500 text-white border-transparent shadow" : "bg-white text-gray-500 border-gray-200 hover:border-brand-300 hover:text-brand-600")}>
+                    <span>{step.level}</span>
+                    <span className="hidden sm:inline text-xs opacity-70">— {step.label}</span>
+                  </Link>
+                  {idx < arr.length - 1 && <ChevronRight className="w-4 h-4 text-gray-300 flex-shrink-0" />}
+                </div>
+              ))}
+            </div>
+
             {/* Topics list */}
             <div>
               <h2 className="font-bold text-gray-900 text-xl mb-4">Course Topics ({course.topics?.length || 0})</h2>
@@ -243,6 +263,18 @@ export default function CourseDetailPage() {
                 })}
               </div>
             </div>
+            {/* Next course CTA */}
+            {course.id < 3 && (
+              <motion.div initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className={cn("mt-6 rounded-2xl p-6 flex items-center justify-between gap-4", getLevelGradient(course.level === "A1" ? "A2" : "B1"))}>
+                <div className="text-white">
+                  <p className="text-white/80 text-sm font-medium mb-1">Ready for the next level?</p>
+                  <p className="text-xl font-bold">{course.id === 1 ? "Goethe A2 — Everyday German" : "Goethe B1 — Independent German"}</p>
+                </div>
+                <Link href={`/courses/${course.id + 1}`} className="flex-shrink-0 flex items-center gap-2 bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-5 py-2.5 rounded-xl transition-all border border-white/30">
+                  Start {course.id === 1 ? "A2" : "B1"} <ChevronRight className="w-4 h-4" />
+                </Link>
+              </motion.div>
+            )}
           </div>
         </main>
       </div>

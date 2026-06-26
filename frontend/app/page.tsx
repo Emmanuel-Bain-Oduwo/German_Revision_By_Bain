@@ -207,7 +207,7 @@ export default function HomePage() {
               className="flex flex-col sm:flex-row items-center justify-center gap-4"
             >
               <Link
-                href="/auth/register"
+                href="/dashboard"
                 className="group flex items-center gap-2 bg-white text-gray-900 font-semibold px-8 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-0.5"
               >
                 <GraduationCap className="w-5 h-5 text-brand-600" />
@@ -367,7 +367,7 @@ export default function HomePage() {
                 ))}
               </div>
               <Link
-                href="/auth/register"
+                href="/dashboard"
                 className="mt-8 inline-flex items-center gap-2 bg-white text-brand-700 font-bold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all hover:-translate-y-0.5"
               >
                 <TrendingUp className="w-5 h-5" />
@@ -471,7 +471,7 @@ export default function HomePage() {
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/auth/register"
+                  href="/dashboard"
                   className="flex items-center gap-2 bg-white text-brand-700 font-bold px-10 py-4 rounded-2xl shadow-xl hover:shadow-2xl transition-all hover:-translate-y-0.5"
                 >
                   <Zap className="w-5 h-5 text-yellow-500" />

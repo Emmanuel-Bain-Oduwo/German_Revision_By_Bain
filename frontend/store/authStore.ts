@@ -14,11 +14,33 @@ interface AuthState {
   updateUser: (updates: Partial<User>) => void;
 }
 
+const defaultUser: User = {
+  id: 1,
+  username: "learner",
+  email: "learner@goetheprep.com",
+  full_name: "German Learner",
+  role: "student",
+  target_level: "A1",
+  native_language: "English",
+  xp_points: 0,
+  streak_days: 0,
+  level: 1,
+  total_study_minutes: 0,
+  exam_readiness_a1: 0,
+  exam_readiness_a2: 0,
+  exam_readiness_b1: 0,
+  is_active: true,
+  is_verified: true,
+  subscription_tier: "free",
+  badges: [],
+  created_at: new Date().toISOString(),
+};
+
 export const useAuthStore = create<AuthState>()(
   persist(
     (set) => ({
-      user: null,
-      isAuthenticated: false,
+      user: defaultUser,
+      isAuthenticated: true,
       isLoading: false,
 
       setUser: (user) => set({ user, isAuthenticated: true }),

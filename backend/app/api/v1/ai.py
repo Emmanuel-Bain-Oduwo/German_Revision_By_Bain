@@ -16,6 +16,8 @@ from app.schemas.ai import (
     GenerateStoryRequest, GeneratePodcastRequest,
     TextToSpeechRequest, GrammarCorrectRequest,
     ExerciseGenerateRequest, ImageDescriptionRequest,
+    VideoLessonRequest, VideoLessonResponse, VideoLessonSlide,
+    VoiceChatRequest, VoiceChatResponse,
 )
 
 router = APIRouter(prefix="/ai", tags=["AI"])
@@ -279,6 +281,131 @@ async def evaluate_image_description(
         return json.loads(response.content)
     except json.JSONDecodeError:
         return {"feedback": response.content, "provider": provider.name}
+
+
+@router.post("/video-lesson/generate", response_model=VideoLessonResponse)
+async def generate_video_lesson(
+    request: VideoLessonRequest,
+    current_user: User = Depends(get_current_user),
+):
+    provider = get_ai_provider(request.provider or current_user.preferred_ai_provider)
+    messages = [
+        Message(
+            role="system",
+            content=f"""You are an expert German language teacher creating a structured video lesson.
+Level: {request.level}. Topic: {request.topic}.
+Create a 6-slide video lesson with engaging content.
+Return ONLY valid JSON in this exact structure:
+{{
+  "title": "lesson title in English",
+  "slides": [
+    {{
+      "slide_number": 1,
+      "type": "title",
+      "heading": "slide heading",
+      "content": "brief intro text",
+      "german_examples": [],
+      "english_translations": [],
+      "narrator_text": "What the narrator says aloud for this slide (1-3 sentences, encouraging and clear)"
+    }},
+    {{
+      "slide_number": 2,
+      "type": "vocabulary",
+      "heading": "Key Vocabulary",
+      "content": "Short explanation",
+      "german_examples": ["word1", "word2", "word3", "word4"],
+      "english_translations": ["trans1", "trans2", "trans3", "trans4"],
+      "narrator_text": "Narrator reads each word and translation"
+    }},
+    {{
+      "slide_number": 3,
+      "type": "grammar",
+      "heading": "Grammar Point",
+      "content": "Clear grammar rule explanation",
+      "german_examples": ["example sentence 1", "example sentence 2"],
+      "english_translations": ["translation 1", "translation 2"],
+      "narrator_text": "Narrator explains the rule"
+    }},
+    {{
+      "slide_number": 4,
+      "type": "example",
+      "heading": "Real-life Examples",
+      "content": "Context description",
+      "german_examples": ["dialogue or examples"],
+      "english_translations": ["translations"],
+      "narrator_text": "Narrator walks through examples"
+    }},
+    {{
+      "slide_number": 5,
+      "type": "grammar",
+      "heading": "Practice Point",
+      "content": "A second grammar or usage point",
+      "german_examples": ["example1", "example2"],
+      "english_translations": ["trans1", "trans2"],
+      "narrator_text": "Narrator explains"
+    }},
+    {{
+      "slide_number": 6,
+      "type": "summary",
+      "heading": "Summary & Tips",
+      "content": "Key takeaways",
+      "german_examples": ["tip1", "tip2"],
+      "english_translations": ["tip1 en", "tip2 en"],
+      "narrator_text": "Closing summary and encouragement"
+    }}
+  ]
+}}""",
+        ),
+        Message(role="user", content=f"Generate a video lesson about '{request.topic}' for {request.level} German learners."),
+    ]
+    response = await provider.chat(messages, temperature=0.7, max_tokens=4000)
+    try:
+        raw = response.content.strip()
+        if raw.startswith("```"):
+            raw = raw.split("```")[1]
+            if raw.startswith("json"):
+                raw = raw[4:]
+        data = json.loads(raw.strip())
+        slides = [VideoLessonSlide(**s) for s in data.get("slides", [])]
+        duration = len(slides) * 25
+        return VideoLessonResponse(
+            title=data.get("title", f"{request.topic} — {request.level}"),
+            level=request.level,
+            topic=request.topic,
+            slides=slides,
+            provider=provider.name,
+            total_duration_seconds=duration,
+        )
+    except (json.JSONDecodeError, Exception) as e:
+        raise HTTPException(status_code=500, detail=f"Video lesson generation failed: {str(e)}")
+
+
+@router.post("/voice-chat", response_model=VoiceChatResponse)
+async def voice_chat(
+    request: VoiceChatRequest,
+    current_user: User = Depends(get_current_user),
+):
+    provider = get_ai_provider(request.provider or current_user.preferred_ai_provider)
+    system_prompt = f"""You are Greta, a warm and friendly German language tutor.
+The student is speaking to you by voice at level {request.level}.
+Keep responses SHORT (2-4 sentences max) since they will be read aloud.
+Respond in a natural, conversational mix of German and English appropriate for {request.level}.
+Correct mistakes gently inline. Be encouraging."""
+
+    messages = [Message(role="system", content=system_prompt)]
+    for msg in request.conversation_history[-6:]:
+        messages.append(Message(role=msg.role, content=msg.content))
+    messages.append(Message(role="user", content=request.transcript))
+
+    response = await provider.chat(messages, temperature=0.75, max_tokens=300)
+    current_user.xp_points += 5
+    await get_db()
+
+    return VoiceChatResponse(
+        reply_text=response.content,
+        provider=provider.name,
+        xp_earned=5,
+    )
 
 
 @router.get("/chat/sessions")
