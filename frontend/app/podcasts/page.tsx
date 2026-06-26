@@ -2,9 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { Headphones, Clock, Play, Sparkles, Volume2, BookOpen, Zap } from "lucide-react";
+import { Headphones, Clock, Play, Sparkles, Volume2, BookOpen, Zap, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { contentApi, aiApi } from "@/lib/api";
 import type { Podcast } from "@/types";
@@ -38,7 +40,7 @@ export default function PodcastsPage() {
     try {
       const response = await aiApi.generatePodcast({ topic, level: selectedLevel, duration_minutes: 5 });
       const podcastData = response.data.podcast;
-      toast.success("New AI podcast generated!");
+      toast.success("Germakemi created a new podcast!");
       setPodcasts((prev) => [{
         id: Date.now(),
         title: podcastData.title || `${selectedLevel} Podcast`,
@@ -68,9 +70,14 @@ export default function PodcastsPage() {
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between mb-8">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">German Podcasts</h1>
-                <p className="text-gray-500 mt-1">AI-generated audio dialogues to sharpen your Hören skills</p>
+              <div className="flex items-center gap-3">
+                <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                  <ChevronLeft className="w-5 h-5" />
+                </Link>
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-900">German Podcasts</h1>
+                  <p className="text-gray-500 mt-1">Germakemi-created audio dialogues to sharpen your Hören skills</p>
+                </div>
               </div>
               <div className="flex gap-3">
                 {["A1", "A2", "B1"].map((l) => (
@@ -106,7 +113,7 @@ export default function PodcastsPage() {
                 <div className="w-12 h-12 bg-white/20 rounded-2xl flex items-center justify-center mb-4">
                   <Sparkles className="w-6 h-6 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2">Generate AI Podcast</h3>
+                <h3 className="text-xl font-bold mb-2">Germakemi Creates a Podcast</h3>
                 <p className="text-white/70 text-sm mb-6">Create a fresh German dialogue at {selectedLevel} level with vocab highlights and comprehension questions</p>
                 <button onClick={generatePodcast} disabled={generating} className="w-full flex items-center justify-center gap-2 bg-white text-brand-700 font-bold py-3 rounded-xl hover:shadow-lg transition-all disabled:opacity-70">
                   {generating ? "Generating..." : <><Sparkles className="w-4 h-4" /> Generate</>}
@@ -175,12 +182,20 @@ export default function PodcastsPage() {
               <div className="text-center py-20">
                 <Headphones className="w-16 h-16 text-gray-200 mx-auto mb-4" />
                 <p className="text-gray-500 font-medium">No podcasts yet</p>
-                <p className="text-gray-400 text-sm mt-1">Generate your first AI podcast above!</p>
+                <p className="text-gray-400 text-sm mt-1">Ask Germakemi to create your first podcast above!</p>
               </div>
             )}
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="German podcast and listening practice"
+        suggestedQuestions={[
+          "What vocabulary appears most in Goethe Hören exams?",
+          "How can I improve my German listening comprehension?",
+          "Explain the A2 Hören section format and timing",
+        ]}
+      />
     </div>
   );
 }

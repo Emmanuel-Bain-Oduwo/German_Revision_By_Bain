@@ -9,7 +9,7 @@ export const metadata: Metadata = {
     template: "%s | Goethe Exam Platform",
   },
   description:
-    "Master German with AI-powered practice. Prepare for Goethe A1, A2, B1 examinations with personalized tutoring, mock exams, and real-time speaking feedback.",
+    "Master German with Germakemi — your personal tutor. Prepare for Goethe A1, A2, B1 examinations with personalized tutoring, mock exams, and real-time speaking feedback.",
   keywords: [
     "German language",
     "Goethe exam",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     "B1 German",
     "German learning",
     "language exam preparation",
-    "AI German tutor",
+    "Germakemi German tutor",
   ],
   authors: [{ name: "Goethe Exam Platform" }],
   creator: "Goethe Exam Platform",
@@ -26,14 +26,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "https://goetheplatform.com",
-    title: "Goethe Exam Platform",
-    description: "AI-powered German exam preparation for Goethe Institute certifications",
+    title: "Goethe Exam Platform | Germakemi",
+    description: "Germakemi-powered German exam preparation for Goethe Institute certifications",
     siteName: "Goethe Exam Platform",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Goethe Exam Platform",
-    description: "AI-powered German exam preparation",
+    title: "Goethe Exam Platform | Germakemi",
+    description: "Germakemi-powered German exam preparation",
   },
   robots: {
     index: true,

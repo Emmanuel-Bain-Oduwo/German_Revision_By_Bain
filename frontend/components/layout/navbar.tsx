@@ -32,7 +32,7 @@ const navLinks = [
       { href: "/listening-lab", label: "Listening Lab", icon: "👂" },
     ],
   },
-  { href: "/ai-tutor", label: "AI Tutor" },
+  { href: "/ai-tutor", label: "Germakemi" },
 ];
 
 export function Navbar() {

@@ -2,9 +2,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Play, Pause, Volume2, CheckCircle2, Sparkles, Headphones, Clock } from "lucide-react";
+import { CheckCircle2, Sparkles, Headphones, Clock, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { aiApi, contentApi } from "@/lib/api";
 import { cn, getLevelColor } from "@/lib/utils";
@@ -53,9 +55,14 @@ export default function ListeningLabPage() {
         <div className="hidden lg:block"><Sidebar /></div>
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-4xl mx-auto">
-            <div className="mb-8">
-              <h1 className="text-3xl font-bold text-gray-900">Listening Lab 🎧</h1>
-              <p className="text-gray-500 mt-1">AI-generated German dialogues and podcasts for Hören practice</p>
+            <div className="flex items-center gap-3 mb-8">
+              <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                <ChevronLeft className="w-5 h-5" />
+              </Link>
+              <div>
+                <h1 className="text-3xl font-bold text-gray-900">Listening Lab 🎧</h1>
+                <p className="text-gray-500 text-sm mt-0.5">Germakemi-generated German dialogues and exercises for Hören practice</p>
+              </div>
             </div>
 
             {/* Level Selector */}
@@ -74,11 +81,11 @@ export default function ListeningLabPage() {
                 </div>
                 <h2 className="text-2xl font-bold text-gray-900 mb-3">Generate Listening Exercise</h2>
                 <p className="text-gray-500 mb-8 max-w-md mx-auto">
-                  Our AI will create a realistic German dialogue at {selectedLevel} level complete with transcript and comprehension questions.
+                  Germakemi will create a realistic German dialogue at {selectedLevel} level complete with transcript and comprehension questions.
                 </p>
-                <button onClick={generatePodcast} disabled={generating} className="flex items-center gap-2 bg-brand-500 text-white font-bold px-8 py-4 rounded-2xl hover:bg-brand-600 transition-colors shadow-md disabled:opacity-70 mx-auto">
+                <button onClick={generatePodcast} disabled={generating} className="flex items-center gap-2 bg-gradient-to-r from-purple-600 to-brand-600 text-white font-bold px-8 py-4 rounded-2xl hover:shadow-lg transition-all shadow-md disabled:opacity-70 mx-auto">
                   <Sparkles className="w-5 h-5" />
-                  {generating ? "Generating..." : `Generate ${selectedLevel} Listening Exercise`}
+                  {generating ? "Germakemi is creating..." : `Ask Germakemi to Create ${selectedLevel} Exercise`}
                 </button>
               </motion.div>
             ) : (
@@ -173,13 +180,21 @@ export default function ListeningLabPage() {
                 )}
 
                 <button onClick={() => setGeneratedPodcast(null)} className="w-full py-3 border border-gray-200 rounded-xl text-gray-600 hover:bg-gray-50 transition-colors">
-                  Generate New Exercise
+                  Ask Germakemi for a New Exercise
                 </button>
               </div>
             )}
           </div>
         </main>
       </div>
+      <GermakemiWidget
+        pageContext="German listening comprehension"
+        suggestedQuestions={[
+          "What topics appear in the Goethe Hören exam?",
+          "How can I improve my German listening skills?",
+          "Explain what I need to know for the A2 Hören section",
+        ]}
+      />
     </div>
   );
 }

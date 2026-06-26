@@ -2,10 +2,11 @@
 
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { BookOpen, Clock, Zap, ArrowRight, Volume2, Sparkles } from "lucide-react";
+import { BookOpen, Clock, Zap, ArrowRight, Sparkles, ChevronLeft } from "lucide-react";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Sidebar } from "@/components/layout/sidebar";
+import { GermakemiWidget } from "@/components/germakemi/widget";
 import { useAuthStore } from "@/store/authStore";
 import { contentApi, aiApi } from "@/lib/api";
 import type { Story } from "@/types";
@@ -37,7 +38,7 @@ export default function StoriesPage() {
     try {
       const response = await aiApi.generateStory({ topic, level: selectedLevel, word_count: 300, include_questions: true });
       const storyData = response.data.story;
-      toast.success("New AI story generated!");
+      toast.success("Germakemi wrote a new story!");
       setStories((prev) => [{
         id: Date.now(),
         title: storyData.title || `${selectedLevel} Story`,
@@ -61,9 +62,14 @@ export default function StoriesPage() {
         <main className="flex-1 p-6 lg:p-8">
           <div className="max-w-6xl mx-auto">
             <div className="flex items-center justify-between mb-8">
-              <div>
-                <h1 className="text-3xl font-bold text-gray-900">German Stories</h1>
-                <p className="text-gray-500 mt-1">Improve reading skills with AI-generated stories at your level</p>
+              <div className="flex items-center gap-3">
+                <Link href="/dashboard" className="p-2 rounded-xl hover:bg-gray-200 transition-colors text-gray-500">
+                  <ChevronLeft className="w-5 h-5" />
+                </Link>
+                <div>
+                  <h1 className="text-3xl font-bold text-gray-900">German Stories</h1>
+                  <p className="text-gray-500 text-sm mt-0.5">Improve reading skills with Germakemi-authored stories at your level</p>
+                </div>
               </div>
               <div className="flex gap-3">
                 {["A1", "A2", "B1"].map((l) => (
@@ -78,7 +84,7 @@ export default function StoriesPage() {
               {/* Generate Card */}
               <motion.div className="bg-gradient-to-br from-emerald-500 to-brand-600 rounded-3xl p-6 text-white shadow-xl">
                 <Sparkles className="w-8 h-8 text-white/80 mb-3" />
-                <h3 className="text-xl font-bold mb-2">Generate AI Story</h3>
+                <h3 className="text-xl font-bold mb-2">Germakemi Writes a Story</h3>
                 <p className="text-white/70 text-sm mb-6">Create a fresh German story at {selectedLevel} level instantly</p>
                 <button onClick={generateStory} disabled={generating} className="w-full flex items-center justify-center gap-2 bg-white text-emerald-700 font-bold py-3 rounded-xl hover:shadow-lg transition-all disabled:opacity-70">
                   {generating ? "Generating..." : <><Sparkles className="w-4 h-4" /> Generate Story</>}
