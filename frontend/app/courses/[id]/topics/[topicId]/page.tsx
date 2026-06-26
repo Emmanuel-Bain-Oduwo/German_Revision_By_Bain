@@ -548,6 +548,654 @@ const TOPIC_LESSONS: Record<string, TopicLesson> = {
       },
     ],
   },
+
+  // ── A2 Topics ──────────────────────────────────────────────────────────────
+
+  "13": {
+    id: 13, courseId: 2, title: "Modal Verbs", titleGerman: "Modalverben",
+    icon: "🔧", xpReward: 50,
+    sections: [
+      {
+        type: "intro", title: "Modal Verbs (Modalverben)",
+        content: "Modal verbs express ability, permission, obligation, or desire. They are always paired with a main verb in the infinitive, which goes to the END of the sentence. There are six core modal verbs in German — mastering them unlocks a huge range of expression.",
+      },
+      {
+        type: "grammar", title: "The Six Modal Verbs",
+        grammar: [
+          {
+            rule: "können (can/to be able to) — ich kann, du kannst, er/sie/es kann, wir können, ihr könnt, sie/Sie können",
+            examples: [
+              { german: "Ich kann Deutsch sprechen.", english: "I can speak German." },
+              { german: "Kannst du mir helfen?", english: "Can you help me?" },
+              { german: "Er kann nicht kommen.", english: "He cannot come." },
+            ],
+          },
+          {
+            rule: "müssen (must/have to), wollen (want to), sollen (should/supposed to), dürfen (may/allowed to), möchten (would like to)",
+            examples: [
+              { german: "Ich muss jetzt gehen.", english: "I have to go now." },
+              { german: "Sie will Ärztin werden.", english: "She wants to become a doctor." },
+              { german: "Du sollst pünktlich sein.", english: "You should be on time." },
+              { german: "Hier darf man nicht rauchen.", english: "One may not smoke here." },
+              { german: "Ich möchte einen Kaffee, bitte.", english: "I would like a coffee, please." },
+            ],
+          },
+          {
+            rule: "Word order: the modal verb takes position 2 (conjugated), and the infinitive of the main verb goes to the END of the clause.",
+            examples: [
+              { german: "Ich kann heute nicht arbeiten.", english: "I cannot work today." },
+              { german: "Wir müssen das Formular ausfüllen.", english: "We must fill in the form." },
+              { german: "Darf ich bitte die Rechnung haben?", english: "May I have the bill, please?" },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Key Phrases with Modals",
+        vocab: [
+          { german: "Kann ich Ihnen helfen?", english: "Can I help you?", example: "Kann ich Ihnen helfen? – Ja, bitte!", exampleTranslation: "Can I help you? – Yes, please!" },
+          { german: "Ich muss das lernen.", english: "I have to learn that." },
+          { german: "Darf ich reinkommen?", english: "May I come in?" },
+          { german: "Er soll um 9 Uhr hier sein.", english: "He is supposed to be here at 9." },
+          { german: "Wir wollen nach Berlin fahren.", english: "We want to travel to Berlin." },
+          { german: "Ich möchte bitte zahlen.", english: "I would like to pay, please." },
+          { german: "Du musst das nicht machen.", english: "You don't have to do that." },
+          { german: "Kann man hier parken?", english: "Can one park here?" },
+          { german: "Sie darf das Auto benutzen.", english: "She is allowed to use the car." },
+          { german: "Wollen Sie mitkommen?", english: "Do you want to come along?", example: "Wollen Sie mitkommen? – Gerne!", exampleTranslation: "Do you want to come along? – With pleasure!" },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Modal Verbs",
+        questions: [
+          { question: "Where does the infinitive go when using a modal verb?", options: ["Position 1", "Position 2", "At the end", "After the subject"], correct: 2, explanation: "The modal verb takes position 2 (conjugated), and the main verb infinitive goes to the end." },
+          { question: "'Ich ___ Deutsch sprechen.' (I can speak German)", options: ["muss", "will", "kann", "darf"], correct: 2 },
+          { question: "'Hier darf man nicht rauchen.' means:", options: ["One must smoke here", "One may not smoke here", "One wants to smoke here", "One can smoke here"], correct: 1 },
+          { question: "Which modal means 'would like to' (polite)?", options: ["wollen", "müssen", "möchten", "sollen"], correct: 2 },
+          { question: "'Wir müssen das Formular ausfüllen.' Correct word order?", options: ["müssen goes to the end", "ausfüllen goes to position 2", "müssen is position 2, ausfüllen is at the end", "Both verbs go to the end"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "14": {
+    id: 14, courseId: 2, title: "Perfect Tense (Perfekt)", titleGerman: "Perfekt",
+    icon: "⏪", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "The Perfect Tense (Perfekt)",
+        content: "The Perfekt is the main past tense used in spoken German. It's formed with a helper verb (haben or sein) + the past participle (Partizip II). You'll use it constantly in everyday conversation to talk about things that happened.",
+      },
+      {
+        type: "grammar", title: "Forming the Perfekt",
+        grammar: [
+          {
+            rule: "Most verbs use 'haben' as the helper. Regular participles: ge- + stem + -t. Irregular participles must be memorised.",
+            examples: [
+              { german: "kaufen → gekauft", english: "to buy → bought" },
+              { german: "Ich habe das Buch gekauft.", english: "I bought / have bought the book." },
+              { german: "lernen → gelernt", english: "to learn → learnt" },
+              { german: "Wir haben Deutsch gelernt.", english: "We learnt German." },
+              { german: "arbeiten → gearbeitet", english: "to work → worked" },
+            ],
+          },
+          {
+            rule: "Verbs of motion/change of state use 'sein' as the helper. Key 'sein' verbs: gehen, fahren, kommen, fliegen, laufen, bleiben, sein, werden.",
+            examples: [
+              { german: "Ich bin nach Berlin gefahren.", english: "I drove/went to Berlin." },
+              { german: "Sie ist heute früh aufgestanden.", english: "She got up early today." },
+              { german: "Wir sind ins Kino gegangen.", english: "We went to the cinema." },
+              { german: "Er ist in Hamburg geblieben.", english: "He stayed in Hamburg." },
+            ],
+          },
+          {
+            rule: "Common irregular past participles: essen→gegessen, trinken→getrunken, schreiben→geschrieben, sehen→gesehen, nehmen→genommen, sprechen→gesprochen",
+            examples: [
+              { german: "Ich habe Pizza gegessen.", english: "I ate pizza." },
+              { german: "Hast du Wasser getrunken?", english: "Did you drink water?" },
+              { german: "Er hat einen Brief geschrieben.", english: "He wrote a letter." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Past Tense Expressions",
+        vocab: [
+          { german: "gestern", english: "yesterday", example: "Gestern habe ich viel gearbeitet.", exampleTranslation: "Yesterday I worked a lot." },
+          { german: "letzte Woche", english: "last week" },
+          { german: "letztes Jahr", english: "last year" },
+          { german: "vor zwei Tagen", english: "two days ago" },
+          { german: "am Wochenende", english: "at the weekend", example: "Am Wochenende bin ich ins Kino gegangen.", exampleTranslation: "At the weekend I went to the cinema." },
+          { german: "schon einmal", english: "before / already once", example: "Ich bin schon einmal in Wien gewesen.", exampleTranslation: "I have been to Vienna before." },
+          { german: "noch nie", english: "never before" },
+          { german: "früher", english: "in the past / earlier" },
+          { german: "damals", english: "back then / at that time" },
+          { german: "zuerst ... dann ...", english: "first ... then ...", example: "Zuerst habe ich gegessen, dann bin ich spazieren gegangen.", exampleTranslation: "First I ate, then I went for a walk." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Perfekt",
+        questions: [
+          { question: "Which helper verb does 'fahren' (to drive) use in the Perfekt?", options: ["haben", "sein", "werden", "wollen"], correct: 1, explanation: "Verbs of motion use 'sein': ich bin gefahren." },
+          { question: "What is the Partizip II of 'kaufen'?", options: ["gekaufen", "kaufte", "gekauft", "kaufend"], correct: 2 },
+          { question: "'Ich habe Pizza gegessen.' The Partizip II of 'essen' is:", options: ["gegessen", "geessen", "gegessen", "aß"], correct: 0 },
+          { question: "Correct: 'Wir ___ ins Kino gegangen.'", options: ["haben", "sind", "sein", "hatten"], correct: 1 },
+          { question: "'Hast du Deutsch gelernt?' means:", options: ["Are you learning German?", "Do you learn German?", "Did you learn German?", "Will you learn German?"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "15": {
+    id: 15, courseId: 2, title: "Dative Case", titleGerman: "Dativ",
+    icon: "📦", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "The Dative Case (Dativ)",
+        content: "The dative case marks the indirect object — the person or thing that receives something. It's also required after certain prepositions and verbs. Only masculine and neuter change article in the dative.",
+      },
+      {
+        type: "grammar", title: "Dative Articles & Prepositions",
+        grammar: [
+          {
+            rule: "Dative articles: der → dem (m), die → der (f), das → dem (n), die (pl) → den + noun gets -n ending. Indefinite: ein → einem (m/n), eine → einer (f).",
+            examples: [
+              { german: "Ich gebe dem Mann das Buch. (m)", english: "I give the man the book." },
+              { german: "Sie hilft der Frau. (f)", english: "She helps the woman." },
+              { german: "Er dankt dem Kind. (n)", english: "He thanks the child." },
+              { german: "Ich schreibe meiner Mutter einen Brief.", english: "I write my mother a letter." },
+            ],
+          },
+          {
+            rule: "Dative prepositions (always dative): aus, bei, mit, nach, seit, von, zu, gegenüber. Memory trick: 'aus bei mit nach seit von zu' — learn these as a fixed list!",
+            examples: [
+              { german: "Ich fahre mit dem Bus.", english: "I travel by bus." },
+              { german: "Sie kommt aus der Schweiz.", english: "She comes from Switzerland." },
+              { german: "Ich wohne seit einem Jahr in Berlin.", english: "I have been living in Berlin for a year." },
+              { german: "Wir gehen zu dem/zum Bahnhof.", english: "We're going to the station." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Verbs that take Dative",
+        vocab: [
+          { german: "helfen + Dativ", english: "to help (someone)", example: "Kannst du mir helfen?", exampleTranslation: "Can you help me?" },
+          { german: "danken + Dativ", english: "to thank (someone)", example: "Ich danke dir sehr.", exampleTranslation: "I thank you very much." },
+          { german: "gehören + Dativ", english: "to belong to", example: "Das Buch gehört meinem Bruder.", exampleTranslation: "The book belongs to my brother." },
+          { german: "gefallen + Dativ", english: "to please / to like", example: "Das gefällt mir sehr.", exampleTranslation: "I like that very much. (lit. That pleases me.)" },
+          { german: "geben + Dativ", english: "to give (to someone)", example: "Er gibt seiner Mutter Blumen.", exampleTranslation: "He gives his mother flowers." },
+          { german: "zeigen + Dativ", english: "to show (someone)" },
+          { german: "mit dem Bus / Zug / Auto", english: "by bus / train / car" },
+          { german: "seit + Dativ", english: "since / for (time)", example: "Ich lerne seit zwei Jahren Deutsch.", exampleTranslation: "I have been learning German for two years." },
+          { german: "bei + Dativ", english: "at / with (location/person)", example: "Ich wohne bei meinen Eltern.", exampleTranslation: "I live with my parents." },
+          { german: "nach Hause / zu Hause", english: "going home / at home" },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Dative",
+        questions: [
+          { question: "Fill in: 'Ich fahre mit ___ Bus.' (der Bus, dative)", options: ["den", "dem", "der", "des"], correct: 1 },
+          { question: "Which preposition ALWAYS takes the dative?", options: ["durch", "für", "mit", "gegen"], correct: 2, explanation: "'mit' is a dative preposition. durch/für/gegen take accusative." },
+          { question: "'Das gefällt mir.' means:", options: ["I do that", "I like that", "That is mine", "I need that"], correct: 1 },
+          { question: "Fill in: 'Sie hilft ___ Frau.' (die Frau, dative)", options: ["die", "den", "dem", "der"], correct: 3 },
+          { question: "'Ich lerne seit zwei Jahren Deutsch.' — 'seit' takes which case?", options: ["Accusative", "Nominative", "Dative", "Genitive"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "16": {
+    id: 16, courseId: 2, title: "Separable Verbs", titleGerman: "Trennbare Verben",
+    icon: "✂️", xpReward: 50,
+    sections: [
+      {
+        type: "intro", title: "Separable Verbs (Trennbare Verben)",
+        content: "Many German verbs have a separable prefix (an-, auf-, aus-, ein-, mit-, vor-, zurück-, etc.). In a main clause, the prefix splits off and moves to the END of the sentence. In the Perfekt, the ge- goes between the prefix and the stem.",
+      },
+      {
+        type: "grammar", title: "How Separable Verbs Work",
+        grammar: [
+          {
+            rule: "In a main clause (present tense): conjugated verb is in position 2, the prefix goes to the END.",
+            examples: [
+              { german: "aufstehen → Ich stehe um 7 Uhr auf.", english: "to get up → I get up at 7 o'clock." },
+              { german: "anrufen → Er ruft seine Mutter an.", english: "to call → He calls his mother." },
+              { german: "einkaufen → Wir kaufen heute ein.", english: "to shop → We are shopping today." },
+              { german: "mitkommen → Kommst du mit?", english: "to come along → Are you coming along?" },
+            ],
+          },
+          {
+            rule: "In the Perfekt: the prefix + ge + stem + -t/en. The prefix does NOT separate in the Partizip II.",
+            examples: [
+              { german: "aufstehen → aufgestanden", english: "got up" },
+              { german: "anrufen → angerufen", english: "called (on phone)" },
+              { german: "einkaufen → eingekauft", english: "shopped" },
+              { german: "Ich habe heute eingekauft.", english: "I did the shopping today." },
+            ],
+          },
+          {
+            rule: "With a modal verb: the separable verb stays together as a full infinitive at the end.",
+            examples: [
+              { german: "Ich muss jetzt aufstehen.", english: "I have to get up now." },
+              { german: "Kannst du morgen mitkommen?", english: "Can you come along tomorrow?" },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Common Separable Verbs",
+        vocab: [
+          { german: "aufstehen", english: "to get up", example: "Ich stehe um 6 Uhr auf.", exampleTranslation: "I get up at 6 o'clock." },
+          { german: "anrufen", english: "to call (phone)", example: "Ruf mich bitte an!", exampleTranslation: "Please call me!" },
+          { german: "einkaufen", english: "to go shopping" },
+          { german: "mitkommen", english: "to come along" },
+          { german: "ausgehen", english: "to go out", example: "Wir gehen heute Abend aus.", exampleTranslation: "We are going out this evening." },
+          { german: "anfangen", english: "to start/begin", example: "Wann fängt der Film an?", exampleTranslation: "When does the film start?" },
+          { german: "zurückkommen", english: "to come back", example: "Wann kommst du zurück?", exampleTranslation: "When are you coming back?" },
+          { german: "vorbereiten", english: "to prepare" },
+          { german: "einladen", english: "to invite", example: "Er lädt uns zum Essen ein.", exampleTranslation: "He is inviting us to dinner." },
+          { german: "aufmachen / zumachen", english: "to open / to close" },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Separable Verbs",
+        questions: [
+          { question: "Where does the prefix go in a main clause (present tense)?", options: ["Position 1", "After the subject", "Position 2", "At the end"], correct: 3 },
+          { question: "'Er ruft seine Mutter ___.' (anrufen)", options: ["an", "auf", "aus", "ein"], correct: 0 },
+          { question: "Partizip II of 'einkaufen':", options: ["eingekauft", "geinkauft", "einkaufen", "kaufte ein"], correct: 0 },
+          { question: "'Wann fängt der Kurs an?' means:", options: ["Where does the course take place?", "When does the course start?", "How long is the course?", "Who starts the course?"], correct: 1 },
+          { question: "With a modal verb: 'Ich muss jetzt ___.' (aufstehen)", options: ["stehe auf", "auf stehe", "aufstehen", "stehen auf"], correct: 2, explanation: "With a modal, the separable verb stays as a full infinitive at the end." },
+        ],
+      },
+    ],
+  },
+
+  "17": {
+    id: 17, courseId: 2, title: "Adjective Endings", titleGerman: "Adjektivendungen",
+    icon: "🎨", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "Adjective Endings (Adjektivendungen)",
+        content: "When an adjective comes before a noun in German, it must take an ending that matches the noun's gender, case, and whether the article is definite, indefinite, or absent. This is one of the trickier parts of German — but there's a pattern!",
+      },
+      {
+        type: "grammar", title: "Adjective Endings after Definite Articles",
+        grammar: [
+          {
+            rule: "After der/die/das (definite articles), the adjective usually takes -e or -en. Nominative singular: -e for all genders. Everything else: -en.",
+            examples: [
+              { german: "der alte Mann (m, nom)", english: "the old man" },
+              { german: "die junge Frau (f, nom)", english: "the young woman" },
+              { german: "das kleine Kind (n, nom)", english: "the small child" },
+              { german: "Ich sehe den alten Mann. (m, acc)", english: "I see the old man." },
+              { german: "Er hilft der jungen Frau. (f, dat)", english: "He helps the young woman." },
+            ],
+          },
+          {
+            rule: "After ein/eine/ein (indefinite articles), the adjective must show the gender itself in nominative and accusative neuter/feminine.",
+            examples: [
+              { german: "ein alter Mann (m, nom)", english: "an old man" },
+              { german: "eine junge Frau (f, nom)", english: "a young woman" },
+              { german: "ein kleines Kind (n, nom)", english: "a small child" },
+              { german: "Ich habe einen neuen Job.", english: "I have a new job." },
+              { german: "Das ist eine schöne Stadt.", english: "That is a beautiful city." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Common Adjectives",
+        vocab: [
+          { german: "groß / klein", english: "big / small", example: "Sie hat eine große Wohnung.", exampleTranslation: "She has a big flat." },
+          { german: "alt / neu", english: "old / new" },
+          { german: "gut / schlecht", english: "good / bad" },
+          { german: "schön / hässlich", english: "beautiful / ugly" },
+          { german: "teuer / billig / günstig", english: "expensive / cheap / affordable", example: "Das ist ein günstiges Restaurant.", exampleTranslation: "That is an affordable restaurant." },
+          { german: "interessant / langweilig", english: "interesting / boring" },
+          { german: "einfach / schwierig", english: "easy / difficult" },
+          { german: "lecker", english: "tasty / delicious", example: "Das war ein leckeres Essen!", exampleTranslation: "That was a delicious meal!" },
+          { german: "freundlich / unhöflich", english: "friendly / unfriendly" },
+          { german: "müde / hungrig / durstig", english: "tired / hungry / thirsty" },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Adjective Endings",
+        questions: [
+          { question: "'Das ist ein ___ Mann.' (alt, masculine nominative after indefinite article)", options: ["alte", "altem", "alter", "alten"], correct: 2, explanation: "After 'ein' in masculine nominative, the adjective takes -er to show the gender." },
+          { question: "'Sie hat eine ___ Wohnung.' (groß, feminine nominative after indefinite article)", options: ["große", "großen", "großem", "großer"], correct: 0 },
+          { question: "'Ich sehe den ___ Mann.' (alt, masculine accusative after definite article)", options: ["alte", "alten", "alter", "altem"], correct: 1, explanation: "After definite article in accusative (and all other cases except nom. sing.), use -en." },
+          { question: "'Das war ein ___ Essen!' (lecker, neuter nominative)", options: ["leckeren", "leckere", "leckerer", "leckeres"], correct: 3 },
+          { question: "After 'die' (definite, feminine, nominative), what ending does the adjective take?", options: ["-en", "-er", "-em", "-e"], correct: 3 },
+        ],
+      },
+    ],
+  },
+
+  "18": {
+    id: 18, courseId: 2, title: "Comparative & Superlative", titleGerman: "Komparativ und Superlativ",
+    icon: "📊", xpReward: 50,
+    sections: [
+      {
+        type: "intro", title: "Comparative & Superlative",
+        content: "To compare things in German, you add -er to the adjective (comparative) and am …-sten for the superlative. Many common adjectives have irregular forms — these are worth memorising.",
+      },
+      {
+        type: "grammar", title: "Forming Comparative & Superlative",
+        grammar: [
+          {
+            rule: "Comparative: adjective + -er. Superlative (predicate): am + adjective + -sten. Many one-syllable adjectives also add an umlaut.",
+            examples: [
+              { german: "schnell → schneller → am schnellsten", english: "fast → faster → fastest" },
+              { german: "alt → älter → am ältesten", english: "old → older → oldest" },
+              { german: "groß → größer → am größten", english: "big → bigger → biggest" },
+              { german: "kalt → kälter → am kältesten", english: "cold → colder → coldest" },
+            ],
+          },
+          {
+            rule: "Irregular forms — these must be memorised:",
+            examples: [
+              { german: "gut → besser → am besten", english: "good → better → best" },
+              { german: "viel → mehr → am meisten", english: "much/many → more → most" },
+              { german: "gern → lieber → am liebsten", english: "gladly → preferably → most preferably" },
+              { german: "hoch → höher → am höchsten", english: "high → higher → highest" },
+            ],
+          },
+          {
+            rule: "Comparisons: A ist …er als B (A is …er than B). A ist genauso … wie B (A is as … as B).",
+            examples: [
+              { german: "Berlin ist größer als Hamburg.", english: "Berlin is bigger than Hamburg." },
+              { german: "Deutsch ist schwieriger als Englisch.", english: "German is harder than English." },
+              { german: "Er ist genauso alt wie ich.", english: "He is as old as I am." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Comparative & Superlative",
+        questions: [
+          { question: "Comparative of 'groß':", options: ["größen", "am größten", "größer", "großer"], correct: 2 },
+          { question: "Superlative of 'gut':", options: ["am gutest", "am besten", "am gutsten", "besser"], correct: 1 },
+          { question: "'Berlin ist ___ als Hamburg.' (groß)", options: ["am größten", "größer", "große", "am größer"], correct: 1 },
+          { question: "Comparative of 'viel':", options: ["vieler", "vielst", "mehr", "am meisten"], correct: 2 },
+          { question: "'Er ist genauso alt ___ ich.' means:", options: ["He is older than me", "He is younger than me", "He is as old as me", "He is the oldest"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "19": {
+    id: 19, courseId: 2, title: "Travel & Transport", titleGerman: "Reisen und Verkehr",
+    icon: "✈️", xpReward: 50,
+    sections: [
+      {
+        type: "intro", title: "Travel & Transport",
+        content: "Travel vocabulary is essential for life in a German-speaking country and for the Goethe A2 exam. You'll learn how to buy tickets, ask for directions, and describe journeys.",
+      },
+      {
+        type: "vocab", title: "Transport Vocabulary",
+        vocab: [
+          { german: "der Zug / die U-Bahn / der Bus", english: "the train / the underground / the bus", example: "Ich fahre mit dem Zug nach München.", exampleTranslation: "I travel to Munich by train." },
+          { german: "das Flugzeug / das Schiff", english: "the aeroplane / the ship" },
+          { german: "der Bahnhof / der Flughafen", english: "the train station / the airport" },
+          { german: "die Haltestelle", english: "the (bus/tram) stop" },
+          { german: "das Ticket / die Fahrkarte", english: "the ticket" },
+          { german: "einfache Fahrt / Hin- und Rückfahrt", english: "single / return ticket", example: "Eine Fahrkarte nach Berlin, bitte. Einfache Fahrt.", exampleTranslation: "A ticket to Berlin please. Single." },
+          { german: "der Anschluss", english: "the connection (transport)" },
+          { german: "umsteigen", english: "to change (train/bus)", example: "Sie müssen in Frankfurt umsteigen.", exampleTranslation: "You have to change in Frankfurt." },
+          { german: "Wo ist ...? / Wie komme ich zu ...?", english: "Where is ...? / How do I get to ...?" },
+          { german: "geradeaus / links / rechts", english: "straight ahead / left / right", example: "Gehen Sie geradeaus und dann links.", exampleTranslation: "Go straight ahead and then left." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Travel & Transport",
+        questions: [
+          { question: "What is 'the train station' in German?", options: ["der Flughafen", "die Haltestelle", "der Bahnhof", "das Gleis"], correct: 2 },
+          { question: "'Einfache Fahrt' means:", options: ["Return ticket", "Single ticket", "Platform ticket", "Season ticket"], correct: 1 },
+          { question: "'Sie müssen in Frankfurt umsteigen.' means:", options: ["You must travel to Frankfurt", "You have to change in Frankfurt", "You arrived in Frankfurt", "You missed your connection"], correct: 1 },
+          { question: "How do you say 'straight ahead' in German?", options: ["links", "rechts", "geradeaus", "zurück"], correct: 2 },
+          { question: "'Wie komme ich zum Bahnhof?' means:", options: ["Where is the next bus stop?", "How do I get to the train station?", "When does the train leave?", "How much is a ticket?"], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "20": {
+    id: 20, courseId: 2, title: "Health & Body", titleGerman: "Gesundheit und Körper",
+    icon: "🏥", xpReward: 50,
+    sections: [
+      {
+        type: "intro", title: "Health & Body",
+        content: "Being able to describe symptoms and talk about health is vital in any language. This lesson covers body parts, common ailments, and how to talk to a doctor or pharmacist in German.",
+      },
+      {
+        type: "vocab", title: "Body & Health Vocabulary",
+        vocab: [
+          { german: "der Kopf / der Bauch / der Rücken", english: "the head / the stomach / the back", example: "Ich habe Kopfschmerzen.", exampleTranslation: "I have a headache." },
+          { german: "die Schmerzen (pl)", english: "the pain(s)" },
+          { german: "Ich bin krank.", english: "I am ill.", example: "Ich bin krank und muss zum Arzt.", exampleTranslation: "I am ill and have to go to the doctor." },
+          { german: "der Arzt / die Ärztin", english: "the doctor (m/f)" },
+          { german: "die Apotheke", english: "the pharmacy", example: "Wo ist die nächste Apotheke?", exampleTranslation: "Where is the nearest pharmacy?" },
+          { german: "das Medikament / die Tablette", english: "the medicine / the tablet" },
+          { german: "Ich habe Fieber.", english: "I have a temperature/fever." },
+          { german: "Mir ist schlecht.", english: "I feel sick/nauseous." },
+          { german: "Ich habe mich verletzt.", english: "I have hurt/injured myself." },
+          { german: "Seit wann haben Sie die Schmerzen?", english: "Since when have you had the pain?", example: "Seit gestern habe ich Bauchschmerzen.", exampleTranslation: "I have had stomach ache since yesterday." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Health & Body",
+        questions: [
+          { question: "'Ich habe Kopfschmerzen.' means:", options: ["I have a stomach ache", "I have a headache", "I have back pain", "I have a fever"], correct: 1 },
+          { question: "What is 'the pharmacy' in German?", options: ["das Krankenhaus", "der Arzt", "die Apotheke", "die Klinik"], correct: 2 },
+          { question: "'Mir ist schlecht.' means:", options: ["I am ill", "I feel sick/nauseous", "I have a temperature", "I am tired"], correct: 1 },
+          { question: "'Seit wann haben Sie die Schmerzen?' asks:", options: ["How severe is the pain?", "Where does it hurt?", "Since when have you had the pain?", "What medicine do you take?"], correct: 2 },
+          { question: "'Ich bin krank.' means:", options: ["I am tired", "I am cold", "I am ill", "I am hungry"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "21": {
+    id: 21, courseId: 2, title: "Work & Professions", titleGerman: "Arbeit und Berufe",
+    icon: "💼", xpReward: 50,
+    sections: [
+      {
+        type: "intro", title: "Work & Professions",
+        content: "Talking about work and professions is a core topic in everyday German and in the Goethe exam. Learn job titles, workplace vocabulary, and how to describe your working life.",
+      },
+      {
+        type: "vocab", title: "Professions & Work",
+        vocab: [
+          { german: "der Arzt / die Ärztin", english: "doctor (m/f)" },
+          { german: "der Lehrer / die Lehrerin", english: "teacher (m/f)", example: "Ich bin Lehrerin von Beruf.", exampleTranslation: "I am a teacher by profession." },
+          { german: "der Ingenieur / die Ingenieurin", english: "engineer (m/f)" },
+          { german: "der Verkäufer / die Verkäuferin", english: "salesperson (m/f)" },
+          { german: "der Bürokaufmann / die Bürokauffrau", english: "office administrator (m/f)" },
+          { german: "der Chef / die Chefin", english: "the boss (m/f)" },
+          { german: "die Stelle / der Job", english: "the position / the job", example: "Ich suche eine neue Stelle.", exampleTranslation: "I am looking for a new position." },
+          { german: "Vollzeit / Teilzeit", english: "full-time / part-time" },
+          { german: "das Gehalt / der Lohn", english: "the salary / the wage" },
+          { german: "Was sind Sie von Beruf?", english: "What is your profession?", example: "Was sind Sie von Beruf? – Ich bin Ingenieur.", exampleTranslation: "What do you do? – I am an engineer." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Work & Professions",
+        questions: [
+          { question: "How do you say 'I am a teacher (f) by profession'?", options: ["Ich bin Lehrer von Beruf.", "Ich bin Lehrerin von Beruf.", "Ich arbeite als Schule.", "Ich habe eine Lehrerin."], correct: 1 },
+          { question: "What does 'Teilzeit' mean?", options: ["Full-time", "Overtime", "Part-time", "Self-employed"], correct: 2 },
+          { question: "'Ich suche eine neue Stelle.' means:", options: ["I have a new job", "I lost my job", "I am looking for a new position", "I start a new job"], correct: 2 },
+          { question: "What is 'the salary' in German?", options: ["der Job", "die Stelle", "das Gehalt", "der Chef"], correct: 2 },
+          { question: "'Was sind Sie von Beruf?' means:", options: ["Where do you work?", "What is your profession?", "When do you work?", "Do you work full-time?"], correct: 1 },
+        ],
+      },
+    ],
+  },
+
+  "22": {
+    id: 22, courseId: 2, title: "Subordinate Clauses: weil, dass, wenn", titleGerman: "Nebensätze",
+    icon: "🔗", xpReward: 60,
+    sections: [
+      {
+        type: "intro", title: "Subordinate Clauses (Nebensätze)",
+        content: "Subordinate clauses let you give reasons, report speech, and express conditions. The key rule: in a subordinate clause, the conjugated verb goes to the END. The three most important conjunctions at A2 are: weil (because), dass (that), and wenn (when/if).",
+      },
+      {
+        type: "grammar", title: "weil, dass, wenn + verb-final",
+        grammar: [
+          {
+            rule: "weil (because) — the conjugated verb moves to the END of the subordinate clause.",
+            examples: [
+              { german: "Ich lerne Deutsch, weil es interessant ist.", english: "I'm learning German because it is interesting." },
+              { german: "Er bleibt zu Hause, weil er krank ist.", english: "He stays at home because he is ill." },
+              { german: "Sie kommt nicht, weil sie arbeiten muss.", english: "She isn't coming because she has to work." },
+            ],
+          },
+          {
+            rule: "dass (that) — used to report thoughts, feelings, and statements. Verb goes to the end.",
+            examples: [
+              { german: "Ich denke, dass Deutsch schwer ist.", english: "I think that German is difficult." },
+              { german: "Er sagt, dass er morgen kommt.", english: "He says that he is coming tomorrow." },
+              { german: "Ich freue mich, dass du hier bist.", english: "I am glad that you are here." },
+            ],
+          },
+          {
+            rule: "wenn (when / if) — used for conditions and repeated/habitual events. Verb goes to the end.",
+            examples: [
+              { german: "Wenn ich Zeit habe, lese ich gern.", english: "When I have time, I like to read." },
+              { german: "Ruf mich an, wenn du ankommst.", english: "Call me when you arrive." },
+              { german: "Wenn es regnet, bleibe ich zu Hause.", english: "If it rains, I stay at home." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Subordinate Clauses",
+        questions: [
+          { question: "In a subordinate clause with 'weil', where does the verb go?", options: ["Position 1", "Position 2", "At the end", "After the conjunction"], correct: 2 },
+          { question: "Correct: 'Ich lerne Deutsch, weil es interessant ___.'", options: ["ist", "ist es", "es ist", "es ist."], correct: 0, explanation: "In the subordinate clause the verb 'ist' goes to the very end." },
+          { question: "'Ich denke, dass er morgen ___.' (kommen)", options: ["kommt", "kommen", "er kommt", "morgen kommt"], correct: 0 },
+          { question: "'Wenn es regnet, ___ ich zu Hause.' (bleiben)", options: ["ich bleibe", "bleibe ich", "bleiben", "bleibt"], correct: 1, explanation: "When the subordinate clause comes first, the main clause verb goes to position 1 — creating inversion: 'bleibe ich'." },
+          { question: "Which conjunction means 'because'?", options: ["wenn", "dass", "weil", "aber"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "23": {
+    id: 23, courseId: 2, title: "Two-way Prepositions", titleGerman: "Wechselpräpositionen",
+    icon: "↔️", xpReward: 50,
+    sections: [
+      {
+        type: "intro", title: "Two-way Prepositions (Wechselpräpositionen)",
+        content: "Nine prepositions can take either accusative or dative depending on meaning. The key rule: accusative = movement/direction (Wohin?), dative = location/position (Wo?). The nine are: an, auf, hinter, in, neben, über, unter, vor, zwischen.",
+      },
+      {
+        type: "grammar", title: "Accusative vs Dative with Two-way Preps",
+        grammar: [
+          {
+            rule: "Accusative → movement/direction (Wohin? — Where to?). Dative → location/state (Wo? — Where?).",
+            examples: [
+              { german: "Ich lege das Buch auf den Tisch. (acc — Wohin?)", english: "I put the book on the table." },
+              { german: "Das Buch liegt auf dem Tisch. (dat — Wo?)", english: "The book is lying on the table." },
+              { german: "Er geht in die Schule. (acc — Wohin?)", english: "He goes into school." },
+              { german: "Er ist in der Schule. (dat — Wo?)", english: "He is at school." },
+            ],
+          },
+          {
+            rule: "Contractions: in + dem = im, in + das = ins, an + dem = am, an + das = ans.",
+            examples: [
+              { german: "Ich bin im Supermarkt.", english: "I am in the supermarket. (in + dem)" },
+              { german: "Wir gehen ins Kino.", english: "We are going to the cinema. (in + das)" },
+              { german: "Das Bild hängt an der Wand.", english: "The picture hangs on the wall." },
+              { german: "Er hängt das Bild an die Wand.", english: "He hangs the picture on the wall." },
+            ],
+          },
+        ],
+      },
+      {
+        type: "vocab", title: "Useful Location & Direction Phrases",
+        vocab: [
+          { german: "auf dem Tisch / auf den Tisch", english: "on the table (location) / onto the table (direction)" },
+          { german: "in der Küche / in die Küche", english: "in the kitchen / into the kitchen" },
+          { german: "vor dem Haus / vor das Haus", english: "in front of the house / to in front of the house" },
+          { german: "neben dem Bett / neben das Bett", english: "next to the bed / next to (movement)" },
+          { german: "zwischen dem Stuhl und dem Tisch", english: "between the chair and the table" },
+          { german: "über der Tür / über die Tür", english: "above the door / over the door (movement)" },
+          { german: "unter dem Bett", english: "under the bed" },
+          { german: "hinter dem Haus", english: "behind the house" },
+          { german: "Wo ist die Katze? — Sie sitzt auf dem Sofa.", english: "Where is the cat? — It's sitting on the sofa." },
+          { german: "Wohin geht er? — Er geht in den Park.", english: "Where is he going? — He's going to the park." },
+        ],
+      },
+      {
+        type: "quiz", title: "Quiz: Two-way Prepositions",
+        questions: [
+          { question: "'Ich lege das Buch ___ Tisch.' (auf, movement onto → accusative, der Tisch)", options: ["dem", "der", "den", "das"], correct: 2, explanation: "Movement/direction → accusative: auf den Tisch." },
+          { question: "'Das Buch liegt ___ Tisch.' (auf, location → dative)", options: ["den", "dem", "der", "das"], correct: 1 },
+          { question: "'Wir gehen ins Kino.' 'ins' is a contraction of:", options: ["in + das", "in + dem", "in + die", "in + der"], correct: 0 },
+          { question: "Which question word signals accusative with two-way prepositions?", options: ["Wo?", "Woher?", "Wohin?", "Wann?"], correct: 2 },
+          { question: "'Er ist im Supermarkt.' 'im' is a contraction of:", options: ["in + das", "in + die", "in + dem", "in + den"], correct: 2 },
+        ],
+      },
+    ],
+  },
+
+  "24": {
+    id: 24, courseId: 2, title: "A2 Goethe Exam Practice", titleGerman: "Goethe A2 Prüfungsvorbereitung",
+    icon: "🏆", xpReward: 110,
+    sections: [
+      {
+        type: "intro", title: "A2 Exam Practice",
+        content: "The Goethe-Zertifikat A2 has four parts: Lesen (reading), Hören (listening), Schreiben (writing), and Sprechen (speaking). This practice session focuses on reading comprehension and language use — the style of questions you'll face on the real exam.",
+      },
+      {
+        type: "vocab", title: "Exam Strategies & Key Phrases",
+        vocab: [
+          { german: "Lesen Sie den Text und kreuzen Sie an.", english: "Read the text and tick/cross." },
+          { german: "Richtig / Falsch / Nicht im Text", english: "True / False / Not in the text" },
+          { german: "Welche Überschrift passt?", english: "Which heading fits?" },
+          { german: "Ergänzen Sie die Lücken.", english: "Fill in the gaps." },
+          { german: "Schreiben Sie eine E-Mail.", english: "Write an email." },
+          { german: "Ich würde gern wissen, ob …", english: "I would like to know if …" },
+          { german: "Könnten Sie mir bitte … sagen?", english: "Could you please tell me …?" },
+          { german: "Vielen Dank für Ihre Nachricht.", english: "Thank you very much for your message." },
+          { german: "Mit freundlichen Grüßen", english: "Kind regards (formal letter/email sign-off)" },
+          { german: "Ich freue mich auf Ihre Antwort.", english: "I look forward to your reply." },
+        ],
+      },
+      {
+        type: "quiz", title: "A2 Exam-Style Questions",
+        questions: [
+          {
+            question: "Notice: 'Kurs: Deutsch für Anfänger. Beginn: 5. März, 18:30 Uhr. Ort: Volkshochschule, Raum 12. Kosten: 80 €.' When does the course start?",
+            options: ["5 March at 8:30 am", "5 March at 6:30 pm", "12 March at 18:00", "March, room 80"],
+            correct: 1, explanation: "18:30 Uhr = 6:30 pm.",
+          },
+          {
+            question: "Email: 'Liebe Anna, ich kann leider morgen nicht kommen, weil ich krank bin. Kannst du mir die Hausaufgaben schicken?' Why can't the person come?",
+            options: ["They forgot", "They are working", "They are ill", "They have no time"],
+            correct: 2, explanation: "'weil ich krank bin' = because I am ill.",
+          },
+          {
+            question: "Ad: 'Zu vermieten: 3-Zimmer-Wohnung, 75 m², 2. OG, Balkon, Keller, Tiefgarage. 950 € Kaltmiete.' How many rooms does the flat have?",
+            options: ["2", "3", "75", "4"],
+            correct: 1,
+          },
+          {
+            question: "'Ich lerne Deutsch, ___ es für meinen Job wichtig ist.' (because)",
+            options: ["dass", "wenn", "weil", "aber"],
+            correct: 2,
+          },
+          {
+            question: "Thomas says: 'Ich bin letztes Jahr nach Deutschland gefahren und habe viele Städte besucht.' What tense is used and what did Thomas do?",
+            options: ["Present — he is travelling now", "Perfect — he travelled to Germany last year", "Future — he will travel", "Imperfect — he used to travel"],
+            correct: 1, explanation: "'bin gefahren' and 'habe besucht' are Perfekt (past). 'letztes Jahr' = last year.",
+          },
+        ],
+      },
+    ],
+  },
 };
 
 function getFallbackLesson(topicId: string, courseId: string): TopicLesson {
