@@ -65,7 +65,8 @@ export default function CoursesPage() {
                   <div className="h-32 bg-gray-100 rounded-xl mb-4" /><div className="h-6 bg-gray-100 rounded w-3/4 mb-2" />
                 </div>
               )) : courses.length > 0 ? courses.map((course, idx) => (
-                <motion.div key={course.id} initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden card-hover group">
+                <Link key={course.id} href={`/courses/${course.id}`}>
+                <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.1 }} className="bg-white rounded-3xl shadow-sm border border-gray-100 overflow-hidden card-hover group cursor-pointer">
                   <div className={cn("h-36 bg-gradient-to-br flex items-center justify-center text-white relative", getLevelGradient(course.level))}>
                     <BookOpen className="w-12 h-12 opacity-50" />
                     <div className="absolute top-4 left-4">
@@ -90,11 +91,12 @@ export default function CoursesPage() {
                         <span key={tag} className="text-xs bg-gray-100 text-gray-600 px-2 py-0.5 rounded-full">{tag}</span>
                       ))}
                     </div>
-                    <Link href={`/courses/${course.id}`} className={cn("flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold transition-all", course.is_premium && user?.subscription_tier === "free" ? "bg-gray-100 text-gray-500 cursor-not-allowed" : `bg-gradient-to-r ${getLevelGradient(course.level)} text-white hover:shadow-md`)}>
+                    <div className={cn("flex items-center justify-center gap-2 w-full py-3 rounded-xl text-sm font-semibold transition-all", course.is_premium && user?.subscription_tier === "free" ? "bg-gray-100 text-gray-500 cursor-not-allowed" : `bg-gradient-to-r ${getLevelGradient(course.level)} text-white hover:shadow-md`)}>
                       {course.is_premium && user?.subscription_tier === "free" ? <><Lock className="w-4 h-4" /> Upgrade</> : <>Start Course <ChevronRight className="w-4 h-4" /></>}
-                    </Link>
+                    </div>
                   </div>
                 </motion.div>
+                </Link>
               )) : (
                 <div className="col-span-3 text-center py-16">
                   <BookOpen className="w-12 h-12 text-gray-200 mx-auto mb-4" />
