@@ -215,27 +215,32 @@ export default function CourseDetailPage() {
             <div>
               <h2 className="font-bold text-gray-900 text-xl mb-4">Course Topics ({course.topics?.length || 0})</h2>
               <div className="space-y-3">
-                {(course.topics || []).map((topic, idx) => (
-                  <motion.div key={topic.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }} className={cn("bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex items-center gap-4 transition-all", isLocked ? "opacity-60" : "hover:shadow-md hover:border-brand-100 cursor-pointer")}>
-                    <div className="w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
-                      {topic.icon || "📚"}
-                    </div>
-                    <div className="flex-1 min-w-0">
+                {(course.topics || []).map((topic, idx) => {
+                  const inner = (
+                    <motion.div key={topic.id} initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: idx * 0.05 }} className={cn("bg-white rounded-2xl border border-gray-100 shadow-sm p-5 flex items-center gap-4 transition-all", isLocked ? "opacity-60 cursor-not-allowed" : "hover:shadow-md hover:border-brand-100 cursor-pointer")}>
+                      <div className="w-11 h-11 bg-gray-50 rounded-xl flex items-center justify-center text-xl flex-shrink-0">
+                        {topic.icon || "📚"}
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2">
+                          <h3 className="font-semibold text-gray-900">{topic.title}</h3>
+                          {topic.title_german && <span className="text-sm text-gray-400 italic">({topic.title_german})</span>}
+                        </div>
+                        <div className="flex items-center gap-3 mt-1 text-xs text-gray-500">
+                          {topic.lesson_count && <span><BookOpen className="w-3.5 h-3.5 inline mr-0.5" />{topic.lesson_count} lessons</span>}
+                          <span className="text-yellow-600"><Zap className="w-3.5 h-3.5 inline mr-0.5" />+{topic.xp_reward} XP</span>
+                        </div>
+                      </div>
                       <div className="flex items-center gap-2">
-                        <h3 className="font-semibold text-gray-900">{topic.title}</h3>
-                        {topic.title_german && <span className="text-sm text-gray-400 italic">({topic.title_german})</span>}
+                        <span className="text-xs text-gray-400 font-medium">{idx + 1}/{course.topics.length}</span>
+                        {isLocked ? <Lock className="w-4 h-4 text-gray-300" /> : <ChevronRight className="w-5 h-5 text-gray-300" />}
                       </div>
-                      <div className="flex items-center gap-3 mt-1 text-xs text-gray-500">
-                        {topic.lesson_count && <span><BookOpen className="w-3.5 h-3.5 inline mr-0.5" />{topic.lesson_count} lessons</span>}
-                        <span className="text-yellow-600"><Zap className="w-3.5 h-3.5 inline mr-0.5" />+{topic.xp_reward} XP</span>
-                      </div>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-gray-400 font-medium">{idx + 1}/{course.topics.length}</span>
-                      {isLocked ? <Lock className="w-4 h-4 text-gray-300" /> : <ChevronRight className="w-5 h-5 text-gray-300" />}
-                    </div>
-                  </motion.div>
-                ))}
+                    </motion.div>
+                  );
+                  return isLocked ? <div key={topic.id}>{inner}</div> : (
+                    <Link key={topic.id} href={`/courses/${course.id}/topics/${topic.id}`}>{inner}</Link>
+                  );
+                })}
               </div>
             </div>
           </div>
