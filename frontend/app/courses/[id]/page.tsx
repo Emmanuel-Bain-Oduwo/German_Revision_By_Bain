@@ -111,7 +111,10 @@ export default function CourseDetailPage() {
       setLoading(true);
       try {
         const response = await courseApi.get(Number(id));
-        setCourse(response.data || COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id)) || null);
+        const fallback = COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id));
+        const data = response.data || fallback;
+        if (data) setCourse({ ...data, is_premium: false, topics: fallback?.topics || data.topics });
+        else setCourse(null);
       } catch {
         setCourse(COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id)) || null);
       } finally { setLoading(false); }

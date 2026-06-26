@@ -67,7 +67,7 @@ COURSES_DATA = [
         "level": "B1",
         "order_index": 3,
         "is_published": True,
-        "is_premium": True,
+        "is_premium": False,
         "total_lessons": 40,
         "estimated_hours": 30,
         "xp_reward": 1000,
