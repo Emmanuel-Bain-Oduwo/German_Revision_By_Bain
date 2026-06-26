@@ -2083,6 +2083,12 @@ export default function TopicLessonPage() {
                 <Link href={`/courses/${courseId}`} className="w-full py-3 rounded-xl bg-gradient-to-r from-brand-500 to-brand-600 text-white font-semibold hover:shadow-md transition-all flex items-center justify-center gap-2">
                   <BookOpen className="w-4 h-4" /> Back to Course
                 </Link>
+                {/* Next topic shortcut — go to next topic id */}
+                {lesson.id < (lesson.courseId === 1 ? 12 : lesson.courseId === 2 ? 24 : 38) && (
+                  <Link href={`/courses/${courseId}/topics/${lesson.id + 1}`} className="w-full py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-600 text-white font-semibold hover:shadow-md transition-all flex items-center justify-center gap-2">
+                    Next Topic <ChevronRight className="w-4 h-4" />
+                  </Link>
+                )}
               </div>
             </motion.div>
           </main>

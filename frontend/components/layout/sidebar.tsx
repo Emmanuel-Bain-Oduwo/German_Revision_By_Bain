@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import {
   LayoutDashboard, BookOpen, Layers, MessageSquare, Mic,
   Headphones, FileText, Radio, Image, BarChart3, Settings,
-  Trophy, Target, Flame, Zap, GraduationCap
+  Trophy, Target, Flame, Zap, GraduationCap, Video, PhoneCall
 } from "lucide-react";
 import { useAuthStore } from "@/store/authStore";
 import { cn, getLevelColor, formatMinutes } from "@/lib/utils";
@@ -21,6 +21,8 @@ const sidebarItems = [
   { href: "/podcasts", label: "Podcasts", icon: Radio },
   { href: "/ai-tutor", label: "Germakemi", icon: MessageSquare },
   { href: "/mock-exams", label: "Mock Exams", icon: FileText },
+  { href: "/video-lessons", label: "Video Lessons", icon: Video },
+  { href: "/voice-chat", label: "Voice Chat", icon: PhoneCall },
   { href: "/speaking-lab", label: "Speaking Lab", icon: Mic },
   { href: "/listening-lab", label: "Listening Lab", icon: Headphones },
   { href: "/profile", label: "Profile", icon: Trophy },

@@ -143,6 +143,10 @@ export const aiApi = {
   getChatSessions: () => api.get("/ai/chat/sessions"),
   textToSpeech: (data: { text: string; voice?: string; language?: string }) =>
     api.post("/ai/tts", data, { responseType: "arraybuffer" }),
+  generateVideoLesson: (data: { topic: string; level: string }) =>
+    api.post("/ai/video-lesson/generate", data),
+  voiceChat: (data: { transcript: string; level: string; conversation_history: { role: string; content: string }[] }) =>
+    api.post("/ai/voice-chat", data),
 };
 
 export const courseApi = {
