@@ -12,6 +12,7 @@ import { flashcardApi } from "@/lib/api";
 import type { Flashcard } from "@/types";
 import { cn, getLevelColor } from "@/lib/utils";
 import { toast } from "sonner";
+import { FLASHCARDS_FALLBACK } from "@/lib/fallback-data";
 
 const QUALITY_BUTTONS = [
   { quality: 1, label: "Again", desc: "Didn't remember", color: "bg-red-500 hover:bg-red-600", textColor: "text-red-700", bg: "bg-red-50" },
@@ -34,12 +35,16 @@ export default function FlashcardsPage() {
     setLoading(true);
     try {
       const response = await flashcardApi.getStudySession(selectedLevel, 20);
-      setCards(response.data.cards || []);
+      const data = response.data.cards || [];
+      setCards(data.length ? data : FLASHCARDS_FALLBACK.filter((c) => !c.level || c.level === selectedLevel));
       setCurrentIdx(0);
       setIsFlipped(false);
       setSessionComplete(false);
     } catch {
-      toast.error("Failed to load flashcards");
+      setCards(FLASHCARDS_FALLBACK.filter((c) => !c.level || c.level === selectedLevel));
+      setCurrentIdx(0);
+      setIsFlipped(false);
+      setSessionComplete(false);
     } finally {
       setLoading(false);
     }

@@ -10,6 +10,7 @@ import { GermakemiWidget } from "@/components/germakemi/widget";
 import { vocabularyApi } from "@/lib/api";
 import type { GrammarRule } from "@/types";
 import { cn, getLevelColor } from "@/lib/utils";
+import { GRAMMAR_RULES_FALLBACK } from "@/lib/fallback-data";
 
 const CATEGORIES = ["all", "tenses", "cases", "word_order", "articles", "adjectives", "pronouns", "verbs"];
 
@@ -29,8 +30,9 @@ export default function GrammarPage() {
         if (selectedLevel) params.level = selectedLevel;
         if (selectedCategory !== "all") params.category = selectedCategory;
         const response = await vocabularyApi.getGrammarRules(params);
-        setRules(response.data.rules || []);
-      } catch { setRules([]); } finally { setLoading(false); }
+        const data = response.data.rules || [];
+        setRules(data.length ? data : GRAMMAR_RULES_FALLBACK.filter((r) => (!selectedLevel || r.level === selectedLevel) && (selectedCategory === "all" || r.category === selectedCategory)));
+      } catch { setRules(GRAMMAR_RULES_FALLBACK); } finally { setLoading(false); }
     };
     fetch();
   }, [selectedLevel, selectedCategory]);

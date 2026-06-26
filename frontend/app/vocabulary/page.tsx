@@ -11,6 +11,7 @@ import { vocabularyApi, aiApi } from "@/lib/api";
 import type { Vocabulary } from "@/types";
 import { cn, getLevelColor } from "@/lib/utils";
 import { toast } from "sonner";
+import { VOCABULARY_FALLBACK } from "@/lib/fallback-data";
 
 const WORD_TYPES = ["all", "noun", "verb", "adjective", "adverb", "phrase"];
 const LEVELS = ["A1", "A2", "B1"];
@@ -34,10 +35,27 @@ export default function VocabularyPage() {
       if (selectedLevel) params.level = selectedLevel;
       if (selectedType !== "all") params.word_type = selectedType;
       const response = await vocabularyApi.list(params);
-      setWords(response.data.items || []);
-      setTotal(response.data.total || 0);
+      const items = response.data.items || [];
+      if (items.length) {
+        setWords(items);
+        setTotal(response.data.total || 0);
+      } else {
+        const filtered = VOCABULARY_FALLBACK.filter((w) =>
+          (!selectedLevel || w.level === selectedLevel) &&
+          (selectedType === "all" || w.word_type === selectedType) &&
+          (!search || w.german_word.toLowerCase().includes(search.toLowerCase()) || w.english_translation.toLowerCase().includes(search.toLowerCase()))
+        );
+        setWords(filtered);
+        setTotal(filtered.length);
+      }
     } catch {
-      toast.error("Failed to load vocabulary");
+      const filtered = VOCABULARY_FALLBACK.filter((w) =>
+        (!selectedLevel || w.level === selectedLevel) &&
+        (selectedType === "all" || w.word_type === selectedType) &&
+        (!search || w.german_word.toLowerCase().includes(search.toLowerCase()) || w.english_translation.toLowerCase().includes(search.toLowerCase()))
+      );
+      setWords(filtered);
+      setTotal(filtered.length);
     } finally {
       setLoading(false);
     }
