@@ -35,6 +35,71 @@ interface CourseDetail {
   topics: Topic[];
 }
 
+const COURSE_DETAILS_FALLBACK: CourseDetail[] = [
+  {
+    id: 1, title: "Goethe A1 — Foundation German", level: "A1",
+    description: "Start your German journey from zero. Master greetings, numbers, family, food, and everyday expressions needed for the Goethe A1 certificate.",
+    total_lessons: 12, estimated_hours: 20, xp_reward: 500, is_premium: false,
+    tags: ["Beginner", "A1", "Goethe", "Grammar", "Vocabulary"],
+    topics: [
+      { id: 1, title: "Greetings & Introductions", title_german: "Begrüßungen", icon: "👋", order_index: 1, xp_reward: 40, lesson_count: 3 },
+      { id: 2, title: "Numbers, Dates & Time", title_german: "Zahlen, Datum und Uhrzeit", icon: "🔢", order_index: 2, xp_reward: 40, lesson_count: 2 },
+      { id: 3, title: "Family & Personal Details", title_german: "Familie und Personen", icon: "👨‍👩‍👧", order_index: 3, xp_reward: 40, lesson_count: 2 },
+      { id: 4, title: "Food, Drink & Shopping", title_german: "Essen, Trinken und Einkaufen", icon: "🛒", order_index: 4, xp_reward: 40, lesson_count: 2 },
+      { id: 5, title: "Home & Living", title_german: "Wohnen und Zuhause", icon: "🏠", order_index: 5, xp_reward: 40, lesson_count: 2 },
+      { id: 6, title: "Articles: der, die, das", title_german: "Artikel", icon: "📝", order_index: 6, xp_reward: 50, lesson_count: 2 },
+      { id: 7, title: "Present Tense Verbs", title_german: "Präsens", icon: "⚡", order_index: 7, xp_reward: 50, lesson_count: 2 },
+      { id: 8, title: "Negation: nicht & kein", title_german: "Verneinung", icon: "❌", order_index: 8, xp_reward: 40, lesson_count: 1 },
+      { id: 9, title: "Accusative Case", title_german: "Akkusativ", icon: "🎯", order_index: 9, xp_reward: 50, lesson_count: 2 },
+      { id: 10, title: "W-Questions", title_german: "W-Fragen", icon: "❓", order_index: 10, xp_reward: 40, lesson_count: 1 },
+      { id: 11, title: "Colours, Clothes & Weather", title_german: "Farben, Kleidung und Wetter", icon: "🌤️", order_index: 11, xp_reward: 40, lesson_count: 2 },
+      { id: 12, title: "A1 Goethe Exam Practice", title_german: "Goethe A1 Prüfungsvorbereitung", icon: "🏆", order_index: 12, xp_reward: 90, lesson_count: 3 },
+    ],
+  },
+  {
+    id: 2, title: "Goethe A2 — Everyday German", level: "A2",
+    description: "Build confidence to navigate daily life in German. Cover travel, health, work, and communication skills for the Goethe A2 certificate.",
+    total_lessons: 16, estimated_hours: 30, xp_reward: 750, is_premium: false,
+    tags: ["Elementary", "A2", "Goethe", "Travel", "Work", "Health"],
+    topics: [
+      { id: 13, title: "Modal Verbs", title_german: "Modalverben", icon: "🔧", order_index: 1, xp_reward: 50, lesson_count: 2 },
+      { id: 14, title: "Perfect Tense (Perfekt)", title_german: "Perfekt", icon: "⏪", order_index: 2, xp_reward: 60, lesson_count: 3 },
+      { id: 15, title: "Dative Case", title_german: "Dativ", icon: "📦", order_index: 3, xp_reward: 60, lesson_count: 2 },
+      { id: 16, title: "Separable Verbs", title_german: "Trennbare Verben", icon: "✂️", order_index: 4, xp_reward: 50, lesson_count: 2 },
+      { id: 17, title: "Adjective Endings", title_german: "Adjektivendungen", icon: "🎨", order_index: 5, xp_reward: 60, lesson_count: 2 },
+      { id: 18, title: "Comparative & Superlative", title_german: "Komparativ und Superlativ", icon: "📊", order_index: 6, xp_reward: 50, lesson_count: 2 },
+      { id: 19, title: "Travel & Transport", title_german: "Reisen und Verkehr", icon: "✈️", order_index: 7, xp_reward: 50, lesson_count: 2 },
+      { id: 20, title: "Health & Body", title_german: "Gesundheit und Körper", icon: "🏥", order_index: 8, xp_reward: 50, lesson_count: 2 },
+      { id: 21, title: "Work & Professions", title_german: "Arbeit und Berufe", icon: "💼", order_index: 9, xp_reward: 50, lesson_count: 2 },
+      { id: 22, title: "Subordinate Clauses: weil, dass, wenn", title_german: "Nebensätze", icon: "🔗", order_index: 10, xp_reward: 60, lesson_count: 2 },
+      { id: 23, title: "Two-way Prepositions", title_german: "Wechselpräpositionen", icon: "↔️", order_index: 11, xp_reward: 50, lesson_count: 2 },
+      { id: 24, title: "A2 Goethe Exam Practice", title_german: "Goethe A2 Prüfungsvorbereitung", icon: "🏆", order_index: 12, xp_reward: 110, lesson_count: 3 },
+    ],
+  },
+  {
+    id: 3, title: "Goethe B1 — Independent German", level: "B1",
+    description: "Reach independence in German. Master complex grammar, express opinions, and tackle all four Goethe B1 exam sections: Lesen, Hören, Schreiben, Sprechen.",
+    total_lessons: 20, estimated_hours: 40, xp_reward: 1000, is_premium: false,
+    tags: ["Intermediate", "B1", "Goethe", "Society", "Career", "Exam Prep"],
+    topics: [
+      { id: 25, title: "Simple Past (Präteritum)", title_german: "Präteritum", icon: "📜", order_index: 1, xp_reward: 60, lesson_count: 2 },
+      { id: 26, title: "Passive Voice (Passiv)", title_german: "Passiv", icon: "🔄", order_index: 2, xp_reward: 70, lesson_count: 2 },
+      { id: 27, title: "Konjunktiv II (würde)", title_german: "Konjunktiv II", icon: "💭", order_index: 3, xp_reward: 70, lesson_count: 2 },
+      { id: 28, title: "Relative Clauses", title_german: "Relativsätze", icon: "🔗", order_index: 4, xp_reward: 70, lesson_count: 2 },
+      { id: 29, title: "Infinitive with zu", title_german: "Infinitiv mit zu", icon: "➡️", order_index: 5, xp_reward: 60, lesson_count: 2 },
+      { id: 30, title: "Genitive Case", title_german: "Genitiv", icon: "🏛️", order_index: 6, xp_reward: 60, lesson_count: 2 },
+      { id: 31, title: "Society & Current Affairs", title_german: "Gesellschaft und Aktualität", icon: "🌍", order_index: 7, xp_reward: 60, lesson_count: 2 },
+      { id: 32, title: "Environment & Nature", title_german: "Umwelt und Natur", icon: "🌱", order_index: 8, xp_reward: 60, lesson_count: 2 },
+      { id: 33, title: "Expressing Opinions", title_german: "Meinungen äußern", icon: "💬", order_index: 9, xp_reward: 60, lesson_count: 2 },
+      { id: 34, title: "Goethe B1: Lesen (Reading)", title_german: "Lesen", icon: "📖", order_index: 10, xp_reward: 80, lesson_count: 3 },
+      { id: 35, title: "Goethe B1: Hören (Listening)", title_german: "Hören", icon: "🎧", order_index: 11, xp_reward: 80, lesson_count: 3 },
+      { id: 36, title: "Goethe B1: Schreiben (Writing)", title_german: "Schreiben", icon: "✍️", order_index: 12, xp_reward: 80, lesson_count: 3 },
+      { id: 37, title: "Goethe B1: Sprechen (Speaking)", title_german: "Sprechen", icon: "🎤", order_index: 13, xp_reward: 80, lesson_count: 3 },
+      { id: 38, title: "Full B1 Mock Exam", title_german: "Vollständige B1 Prüfung", icon: "🏆", order_index: 14, xp_reward: 110, lesson_count: 4 },
+    ],
+  },
+];
+
 export default function CourseDetailPage() {
   const { id } = useParams<{ id: string }>();
   const { user } = useAuthStore();
@@ -46,8 +111,10 @@ export default function CourseDetailPage() {
       setLoading(true);
       try {
         const response = await courseApi.get(Number(id));
-        setCourse(response.data);
-      } catch { setCourse(null); } finally { setLoading(false); }
+        setCourse(response.data || COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id)) || null);
+      } catch {
+        setCourse(COURSE_DETAILS_FALLBACK.find((c) => c.id === Number(id)) || null);
+      } finally { setLoading(false); }
     };
     if (id) fetchCourse();
   }, [id]);
